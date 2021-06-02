@@ -5,12 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\ProductCat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class productCatController extends Controller
 {
     public function index()
     {
-        return view('admin.product_cat.index');
+        $product_cat = ProductCat::get();
+        return view('admin.product_cat.index', ['product_cat' => $product_cat]);
     }
 
     public function create()
@@ -20,26 +22,27 @@ class productCatController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $product_cat = new ProductCat;
+        $product_cat->product_cat_name = $request->product_cat_name;
+        $product_cat->product_cat_img = 'test';
+        $product_cat->product_cat_desc = $request->product_cat_desc;
+        $product_cat->product_cat_slug = Str::of($request->product_cat_name)->slug('-');
+        $product_cat->save();
+
+        return redirect()->route('admin.productCat.index');
     }
 
-    public function show(ProductCat $productCat)
+    public function show($id)
     {
         //
     }
 
-    public function edit(ProductCat $productCat)
+    public function edit($id)
     {
-        return view('admin.product_cat.edit');
+        $product_cat = ProductCat::find($id);
+        return view('admin.product_cat.edit', ['product_cat' => $product_cat]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProductCat  $productCat
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, ProductCat $productCat)
     {
         //

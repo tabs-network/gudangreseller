@@ -36,7 +36,7 @@
                   @csrf
                       <div class="form-group">
                           <label for="example-text-input">Nama Kategori</label>
-                          <input type="text" class="form-control" name="product_cat_name" placeholder="Input Nama Kategori">
+                          <input type="text" class="form-control" name="product_cat_name" placeholder="Input Nama Kategori" value="{{ $product_cat->product_cat_name }}">
                       </div>
                       <div class="form-group">
                               <label>Produk Gambar</label>
@@ -48,7 +48,7 @@
                           </div>
                       <div class="form-group">
                           <label for="example-text-input">Deskripsi</label>
-                          <textarea class="form-control" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi"></textarea>
+                          <textarea class="form-control" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi">{{ $product_cat->product_cat_desc }}</textarea>
                       </div>
                       <div class="form-group text-right">
                           <a href="{{route('admin.productCat.index')}}" class="btn btn-secondary">

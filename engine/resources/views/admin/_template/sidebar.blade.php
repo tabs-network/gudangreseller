@@ -47,6 +47,11 @@
                         <span class="nav-main-link-name">Kategori Produk</span>
                     </a>
                 </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link {{(request()->RouteIs('admin.productType.*'))  ? 'active' : ''}}" href="{{ route('admin.productType.index') }}">
+                        <span class="nav-main-link-name">Tipe Produk</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-main-heading">Heading</li>

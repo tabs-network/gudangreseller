@@ -1,5 +1,5 @@
 @extends('admin._template.main')
-@section('title', 'Produk')
+@section('title', 'Tipe Produk')
 
 @section('content')
 <!-- Hero -->
@@ -7,17 +7,17 @@
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
             <h1 class="flex-sm-fill h3 my-2">
-                PRODUK
+                TIPE PRODUK
             </h1>
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
-                    <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Account</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">Current</li>
+                  <li class="breadcrumb-item">
+                      <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                      <a href="{{route('admin.product.index')}}">Product</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Tipe Produk</li>
                 </ol>
             </nav>
         </div>
@@ -31,7 +31,7 @@
     <div class="block">
         <div class="block-header">
             <h3 class="block-title">
-                PRODUK
+                KATEGORI PRODUK
             </h3>
             <div class="block-options">
               <div class="input-group">
@@ -45,13 +45,13 @@
             </div>
         </div>
         <div class="block-content font-size-sm">
-          <a href="{{route('admin.product.create')}}" class="btn btn-primary mr-1 mb-3">
-              <i class="fa fa-fw fa-plus mr-1"></i> Tambah Produk
+          <a href="{{route('admin.productType.create')}}" class="btn btn-primary mr-1 mb-3">
+              <i class="fa fa-fw fa-plus mr-1"></i> Tambah Kategori
           </a>
           <table class="table table-bordered table-striped table-vcenter">
               <thead>
                   <tr>
-                      <th>PRODUK</th>
+                      <th>KATEGORI</th>
                       <th class="text-center" style="width: 100px;">Actions</th>
                   </tr>
               </thead>
@@ -59,7 +59,7 @@
 
                   <tr>
                       <td class="font-w600 font-size-sm">
-                          <a href="be_pages_generic_profile.php">as</a>
+                          <a href="be_pages_generic_profile.php"></a>
                       </td>
                       <td class="text-center">
                           <div class="btn-group">
@@ -72,6 +72,7 @@
                           </div>
                       </td>
                   </tr>
+
               </tbody>
           </table>
         </div>

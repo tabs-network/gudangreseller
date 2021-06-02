@@ -6,13 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use App\Models\productCat;
 class productController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('admin.product.index');
@@ -20,7 +16,8 @@ class productController extends Controller
 
     public function create()
     {
-        //
+        $product_cat = ProductCat::get();
+        return view('admin.product.create', ['product_cat' => $product_cat]);
     }
 
     /**
