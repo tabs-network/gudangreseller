@@ -46,7 +46,7 @@
         </div>
         <div class="block-content font-size-sm">
           <a href="{{route('admin.productCat.create')}}" class="btn btn-primary mr-1 mb-3">
-              <i class="fa fa-fw fa-plus mr-1"></i> Tambah Kategori
+              <i class="fa fa-fw fa-plus"></i>
           </a>
           <table class="table table-bordered table-striped table-vcenter">
               <thead>

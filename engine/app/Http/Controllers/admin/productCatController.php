@@ -24,9 +24,10 @@ class productCatController extends Controller
     {
         $product_cat = new ProductCat;
         $product_cat->product_cat_name = $request->product_cat_name;
-        $product_cat->product_cat_img = 'test';
         $product_cat->product_cat_desc = $request->product_cat_desc;
         $product_cat->product_cat_slug = Str::of($request->product_cat_name)->slug('-');
+        $product_cat->product_cat_mt_title = $request->product_cat_name;
+        $product_cat->product_cat_mt_desc = $request->product_cat_desc;
         $product_cat->save();
 
         return redirect()->route('admin.productCat.index');

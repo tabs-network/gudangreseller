@@ -31,7 +31,7 @@
     <div class="block">
         <div class="block-header">
             <h3 class="block-title">
-                KATEGORI PRODUK
+                TIPE PRODUK
             </h3>
             <div class="block-options">
               <div class="input-group">
@@ -46,24 +46,24 @@
         </div>
         <div class="block-content font-size-sm">
           <a href="{{route('admin.productType.create')}}" class="btn btn-primary mr-1 mb-3">
-              <i class="fa fa-fw fa-plus mr-1"></i> Tambah Kategori
+              <i class="fa fa-fw fa-plus"></i>
           </a>
           <table class="table table-bordered table-striped table-vcenter">
               <thead>
                   <tr>
-                      <th>KATEGORI</th>
+                      <th>TIPE PRODUK</th>
                       <th class="text-center" style="width: 100px;">Actions</th>
                   </tr>
               </thead>
               <tbody>
-
+                  @foreach($product_type as $v)
                   <tr>
                       <td class="font-w600 font-size-sm">
-                          <a href="be_pages_generic_profile.php"></a>
+                          <a href="be_pages_generic_profile.php">{{ $v->product_type_name }}</a>
                       </td>
                       <td class="text-center">
                           <div class="btn-group">
-                              <a href="#" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
+                              <a href="{{ route('admin.productType.edit', $v->product_type_id) }}" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
                                   <i class="fa fa-fw fa-pencil-alt"></i>
                               </a>
                               <button type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Delete">
@@ -72,7 +72,7 @@
                           </div>
                       </td>
                   </tr>
-
+                  @endforeach
               </tbody>
           </table>
         </div>

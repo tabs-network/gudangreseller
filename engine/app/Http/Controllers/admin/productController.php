@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
 use App\Models\productCat;
+use App\Models\Product;
 class productController extends Controller
 {
     public function index()

@@ -11,9 +11,10 @@ class CreateProductCatTable extends Migration
         Schema::create('product_cat', function (Blueprint $table) {
             $table->id('product_cat_id');
             $table->string('product_cat_name');
-            $table->string('product_cat_img');
             $table->string('product_cat_slug');
             $table->string('product_cat_desc');
+            $table->string('product_cat_mt_title');
+            $table->string('product_cat_mt_desc');
             $table->timestamps();
         });
     }
