@@ -5,8 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\productCat;
 use App\Models\Product;
+use App\Models\productCat;
+use App\Models\productType;
 class productController extends Controller
 {
     public function index()
@@ -17,7 +18,8 @@ class productController extends Controller
     public function create()
     {
         $product_cat = ProductCat::get();
-        return view('admin.product.create', ['product_cat' => $product_cat]);
+        $product_type = ProductType::get();
+        return view('admin.product.create', ['product_cat' => $product_cat, 'product_type' => $product_type]);
     }
 
     /**
