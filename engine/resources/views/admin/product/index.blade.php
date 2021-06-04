@@ -56,14 +56,14 @@
                   </tr>
               </thead>
               <tbody>
-
+                  @foreach($product as $v)
                   <tr>
                       <td class="font-w600 font-size-sm">
-                          <a href="be_pages_generic_profile.php">as</a>
+                          <a href="be_pages_generic_profile.php">{{ $v->product_name }}</a>
                       </td>
                       <td class="text-center">
                           <div class="btn-group">
-                              <a href="#" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
+                              <a href="{{route('admin.product.edit', $v->product_id)}}" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
                                   <i class="fa fa-fw fa-pencil-alt"></i>
                               </a>
                               <button type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Delete">
@@ -72,6 +72,7 @@
                           </div>
                       </td>
                   </tr>
+                  @endforeach
               </tbody>
           </table>
         </div>

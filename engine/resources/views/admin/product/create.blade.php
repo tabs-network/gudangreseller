@@ -30,7 +30,8 @@
     <!-- Your Block -->
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="">
+            <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
                 <div class="block">
                     <div class="block-header">
                         <h3 class="block-title">Upload Produk</h3>
@@ -40,7 +41,7 @@
                             <label>Cover Produk</label>
                             <div class="custom-file">
                                 <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
-                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-custom" name="example-file-input-custom">
+                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-custom" name="product_cover">
                                 <label class="custom-file-label" for="example-file-input-custom">Choose file</label>
                             </div>
                         </div>
@@ -53,22 +54,14 @@
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Nama Produk</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
+                            <input type="text" class="form-control" name="product_name" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
                         </div>
                         <div class="form-group">
                             <label for="example-select">Kategori</label>
-                            <select class="form-control" id="example-select" name="example-select">
-                                <option value="0">Pilih Kategori</option>
-                                <option value="1">Option #1</option>
-                                <option value="2">Option #2</option>
-                                <option value="3">Option #3</option>
-                                <option value="4">Option #4</option>
-                                <option value="5">Option #5</option>
-                                <option value="6">Option #6</option>
-                                <option value="7">Option #7</option>
-                                <option value="8">Option #8</option>
-                                <option value="9">Option #9</option>
-                                <option value="10">Option #10</option>
+                            <select class="form-control select2" name="product_cat_id">
+                                @foreach($product_cat as $v)
+                                <option value="{{ $v->product_cat_id }}">{{ $v->product_cat_name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -80,8 +73,8 @@
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-textarea-input">Deskripsi Produk</label>
-                            <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="8"
-                                placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
+                            <textarea class="form-control" name="product_desc" rows="8"
+placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
 
 - Model simple
 - Nyaman Digunakan
@@ -103,7 +96,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">URL Video Product</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                            <input type="text" class="form-control" name="product_video" placeholder="Input Video Youtube URL">
                         </div>
                     </div>
                 </div>
@@ -114,7 +107,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Minimum Pemesanan</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                            <input type="text" class="form-control" name="product_min_order" placeholder="Input Minimum Pesanan">
                         </div>
                         <div class="form-group">
                             <label>Harga Pasar</label>
@@ -124,18 +117,16 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                                         Rp
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" id="example-group1-input3" name="example-group1-input3">
+                                <input type="text" class="form-control" name="product_price" placeholder="Input Harga Pasar">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Harga Diskon</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        Rp
-                                    </span>
+                                    <span class="input-group-text">Rp</span>
                                 </div>
-                                <input type="text" class="form-control" id="example-group1-input3" name="example-group1-input3">
+                                <input type="text" class="form-control" name="product_disc_price" placeholder="Input Harga Diskon">
                             </div>
                         </div>
                     </div>
@@ -147,26 +138,18 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Stok</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                            <input type="text" class="form-control" name="product_stock" placeholder="Input Stok">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">SKU</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                            <input type="text" class="form-control" name="product_sku" placeholder="Input SKU">
                         </div>
                         <div class="form-group">
                             <label for="example-select">Tipe Produk</label>
-                            <select class="form-control" id="example-select" name="example-select">
-                                <option value="0">Please select</option>
-                                <option value="1">Option #1</option>
-                                <option value="2">Option #2</option>
-                                <option value="3">Option #3</option>
-                                <option value="4">Option #4</option>
-                                <option value="5">Option #5</option>
-                                <option value="6">Option #6</option>
-                                <option value="7">Option #7</option>
-                                <option value="8">Option #8</option>
-                                <option value="9">Option #9</option>
-                                <option value="10">Option #10</option>
+                            <select class="form-control select2" name="product_type_id">\
+                                @foreach($product_type as $v)
+                                <option value="{{ $v->product_type_id }}">{{ $v->product_type_name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -178,11 +161,11 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Meta Title</label>
-                            <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                            <input type="text" class="form-control" name="product_mt_title" placeholder="Input Meta Title">
                         </div>
                         <div class="form-group">
                             <label for="example-textarea-input">Meta Deksripsi</label>
-                            <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="4" placeholder="Textarea content.."></textarea>
+                            <textarea class="form-control" name="product_mt_desc" rows="4" placeholder="Input Meta Deskripsi"></textarea>
                         </div>
                     </div>
                 </div>
@@ -201,4 +184,17 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
     <!-- END Your Block -->
 </div>
 <!-- END Page Content -->
+@endsection
+
+@section('css')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endsection
+
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+$(document).ready(function() {
+$('.select2').select2();
+});
+</script>
 @endsection
