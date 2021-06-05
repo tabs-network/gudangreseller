@@ -1,5 +1,5 @@
-*
-!product/1080x1080/
+
+!product/*
 !public/
 
 !.gitignore
