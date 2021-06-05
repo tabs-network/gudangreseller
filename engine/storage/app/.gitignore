@@ -1,4 +1,5 @@
 *
+!product/*
 !public/
-!product/
+
 !.gitignore
