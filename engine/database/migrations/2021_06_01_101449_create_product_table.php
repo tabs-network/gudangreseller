@@ -24,7 +24,7 @@ class CreateProductTable extends Migration
             $table->integer('product_price');
             $table->integer('product_disc_price');
             $table->integer('product_stock');
-            $table->integer('product_sku');
+            $table->string('product_sku');
             $table->integer('product_type_id');
             $table->string('product_slug');
             $table->string('product_mt_title');
@@ -33,11 +33,6 @@ class CreateProductTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('product');

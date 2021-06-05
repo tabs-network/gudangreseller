@@ -107,7 +107,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Minimum Pemesanan</label>
-                            <input type="text" class="form-control" name="product_min_order" placeholder="Input Minimum Pesanan">
+                            <input type="text" class="form-control" pattern="[0-9]" name="product_min_order" placeholder="Input Minimum Pesanan">
                         </div>
                         <div class="form-group">
                             <label>Harga Pasar</label>
@@ -196,5 +196,6 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
 $(document).ready(function() {
 $('.select2').select2();
 });
+
 </script>
 @endsection
