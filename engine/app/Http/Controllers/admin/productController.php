@@ -9,8 +9,8 @@ use Image;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Product;
-use App\Models\productCat;
-use App\Models\productType;
+use App\Models\ProductCat;
+use App\Models\ProductType;
 class productController extends Controller
 {
     public function index()
