@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\ProductCat;
 use App\Models\ProductType;
+use App\Models\ProductGender;
 class productController extends Controller
 {
     public function index()
@@ -23,7 +24,8 @@ class productController extends Controller
     {
         $product_cat = ProductCat::get();
         $product_type = ProductType::get();
-        return view('admin.product.create', ['product_cat' => $product_cat, 'product_type' => $product_type]);
+        $product_gender = ProductGender::get();
+        return view('admin.product.create', ['product_cat' => $product_cat, 'product_type' => $product_type, 'product_gender' => $product_gender]);
     }
 
     public function store(Request $request)
@@ -35,6 +37,7 @@ class productController extends Controller
         $product->product_cover = $sku.'.'.$ext;
         $product->product_name = $request->product_name;
         $product->product_cat_id = $request->product_cat_id;
+        $product->product_gender_id = $request->product_gender_id;
         $product->product_desc = $request->product_desc;
         $product->product_video = $request->product_video;
         $product->product_min_order = $request->product_min_order;

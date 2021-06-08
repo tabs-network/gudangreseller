@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProductTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('product', function (Blueprint $table) {
@@ -18,6 +13,7 @@ class CreateProductTable extends Migration
             $table->string('product_cover');
             $table->string('product_name');
             $table->integer('product_cat_id');
+            $table->integer('product_gender_id');
             $table->string('product_desc');
             $table->string('product_video');
             $table->integer('product_min_order');

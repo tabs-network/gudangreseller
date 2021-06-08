@@ -58,9 +58,17 @@
                         </div>
                         <div class="form-group">
                             <label for="example-select">Kategori</label>
-                            <select class="form-control select2" name="product_cat_id">
+                            <select class="form-control select2" name="product_gender_id">
                                 @foreach($product_cat as $v)
                                 <option value="{{ $v->product_cat_id }}">{{ $v->product_cat_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-select">Gender</label>
+                            <select class="form-control select2" name="product_cat_id">
+                                @foreach($product_gender as $v)
+                                <option value="{{ $v->product_gender_id }}">{{ $v->product_gender_name }}</option>
                                 @endforeach
                             </select>
                         </div>

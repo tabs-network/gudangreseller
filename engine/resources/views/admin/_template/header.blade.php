@@ -14,9 +14,9 @@
         <button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout" data-action="sidebar_mini_toggle">
             <i class="fa fa-fw fa-ellipsis-v"></i>
         </button>
-        <a href="{{route('website.home')}}" target="_blank" type="button" class="btn btn-sm btn-dual mr-2 " >
+        <a href="{{route('website.home')}}" target="_blank" type="button" class="btn btn-sm btn-dual mr-2">
             <i class="fa fa-fw fa-home"></i>
-        </href>
+        </a>
         <!-- END Toggle Mini Sidebar -->
     </div>
     <!-- END Left Section -->
