@@ -145,10 +145,6 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     </div>
                     <div class="block-content">
                         <div class="form-group">
-                            <label for="example-text-input">Stok</label>
-                            <input type="text" class="form-control" name="product_stock" placeholder="Input Stok">
-                        </div>
-                        <div class="form-group">
                             <label for="example-text-input">SKU</label>
                             <input type="text" class="form-control" name="product_sku" placeholder="Input SKU">
                         </div>
@@ -181,7 +177,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content text-right">
                         <div class="form-group">
                             <a href="{{route('admin.product.index')}}" type="submit" class="btn btn-secondary">Kembali</a>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Next</button>
                         </div>
                     </div>
                 </div>

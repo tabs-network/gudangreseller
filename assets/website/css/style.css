@@ -1,0 +1,17 @@
+/* Product */
+.link-product{
+    text-decoration: none;
+    color:#263238;
+}
+.link-product:hover{
+    text-decoration: none;
+    color:#263238;
+}
+.link-product .card-body h3 {
+    font-size:15px;
+    font-weight: bold;
+}
+
+.link-product .card-body p {
+    font-weight: bold;
+}

@@ -53,7 +53,6 @@
                     <tr>
                         <th style="width:70px;"></th>
                         <th>PRODUK</th>
-                        <th style="width:100px;">STOK</th>
                         <th style="width:100px;">HARGA</th>
                         <th class="text-center" style="width: 100px;"></th>
                     </tr>
@@ -66,13 +65,12 @@
                         </td>
                         <td class="font-size-sm">
                             <p class="font-w600 mb-1">
-                                <a href="be_pages_generic_profile.php">{{ $v->product_name}}</a>
+                                <a href="{{route('admin.product.show', $v->product_slug)}}">{{ $v->product_name}}</a>
                             </p>
                             <p class="text-muted mb-0">
                                 SKU : {{$v->product_sku}}
                             </p>
                         </td>
-                        <td class="font-size-sm">{{$v->product_stock}}</td>
                         <td class="font-size-sm">Rp.{{ number_format($v->product_price)}}</td>
                         <td class="text-center">
                             <div class="dropdown dropleft">
@@ -81,6 +79,9 @@
                                     <i class="si si-settings"></i>
                                 </button>
                                 <div class="dropdown-menu font-size-sm" aria-labelledby="dropdown-default-primary" style="">
+                                    <a href="{{route('admin.product.show', $v->product_slug)}}" class="dropdown-item" href="javascript:void(0)">
+                                        <i class="si si-eye mr-2"></i>Detail
+                                    </a>
                                     <a href="{{route('admin.product.edit', $v->product_id)}}" class="dropdown-item" href="javascript:void(0)">
                                         <i class="si si-pencil mr-2"></i>Edit
                                     </a>
@@ -89,14 +90,6 @@
                                     </a>
                                 </div>
                             </div>
-                            <!-- <div class="btn-group">
-                                <a href="{{route('admin.product.edit', $v->product_id)}}" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </a>
-                                <button type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Delete">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
-                            </div> -->
                         </td>
                     </tr>
                     @endforeach

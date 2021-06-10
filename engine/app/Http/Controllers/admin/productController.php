@@ -12,12 +12,13 @@ use App\Models\Product;
 use App\Models\ProductCat;
 use App\Models\ProductType;
 use App\Models\ProductGender;
+use App\Models\ProductSize;
 class productController extends Controller
 {
     public function index()
     {
         $product = Product::get();
-        return view('admin.product.index', ['product' => $product]);
+        return view('admin.product.index', ['product' => $product ]);
     }
 
     public function create()
@@ -43,7 +44,6 @@ class productController extends Controller
         $product->product_min_order = $request->product_min_order;
         $product->product_price = $request->product_price;
         $product->product_disc_price = $request->product_disc_price;
-        $product->product_stock = $request->product_stock;
         $product->product_sku = $request->product_sku;
         $product->product_type_id = $request->product_type_id;
         $product->product_mt_title = $request->product_mt_title;
@@ -58,12 +58,15 @@ class productController extends Controller
         Image::make($request->file('product_cover'))->resize(300, 300)->save(storage_path('app/product/300x300/'.$sku.'.'.$ext));
         Image::make($request->file('product_cover'))->resize(150, 150)->save(storage_path('app/product/150x150/'.$sku.'.'.$ext));
 
-        return 'echo';
+        return redirect()->route('admin.product.show', Str::of($request->product_name)->slug('-'));
+
     }
 
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::where('product_slug', $id)->first();
+        $product_size = Product::find($product->product_id)->product_size;
+        return view('admin.product.show', ['product' => $product,'product_size' => $product_size]);
     }
 
     public function edit($id)
@@ -74,7 +77,7 @@ class productController extends Controller
         return view('admin.product.edit', ['product' => $product, 'product_cat' => $product_cat, 'product_type' => $product_type]);
     }
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,5 +85,16 @@ class productController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function add_size(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product_size = new ProductSize;
+        $product_size->product_size_option = $request->product_size_option;
+        $product_size->product_size_stock = $request->product_size_stock;
+        $product_size->product_id = $id;
+        $product_size->save();
+        return redirect()->route('admin.product.show', $product->product_slug);
     }
 }

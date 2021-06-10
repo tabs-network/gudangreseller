@@ -19,7 +19,6 @@ class CreateProductTable extends Migration
             $table->integer('product_min_order');
             $table->integer('product_price');
             $table->integer('product_disc_price');
-            $table->integer('product_stock');
             $table->string('product_sku');
             $table->integer('product_type_id');
             $table->string('product_slug');
