@@ -74,7 +74,6 @@
                         <td class="font-size-sm">Rp.{{ number_format($v->product_price)}}</td>
                         <td class="text-center">
                             <div class="dropdown dropleft">
-
                                 <button type="button" class="btn btn-primary" id="dropdown-default-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="si si-settings"></i>
                                 </button>

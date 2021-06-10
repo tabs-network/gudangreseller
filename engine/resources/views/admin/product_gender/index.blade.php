@@ -62,13 +62,18 @@
                             <a href="be_pages_generic_profile.php">{{$v->product_gender_name}}</a>
                         </td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </a>
-                                <button type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Delete">
-                                    <i class="fa fa-fw fa-times"></i>
+                            <div class="dropdown dropleft">
+                                <button type="button" class="btn btn-sm btn-primary" id="dropdown-default-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="si si-settings"></i>
                                 </button>
+                                <div class="dropdown-menu font-size-sm" aria-labelledby="dropdown-default-primary" style="">
+                                    <a href="{{route('admin.productGender.edit', $v->product_gender_id)}}" class="dropdown-item" href="javascript:void(0)">
+                                        <i class="si si-pencil mr-2"></i>Edit
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:void(0)">
+                                        <i class="si si-trash mr-2"></i>Delete
+                                    </a>
+                                </div>
                             </div>
                         </td>
                     </tr>
