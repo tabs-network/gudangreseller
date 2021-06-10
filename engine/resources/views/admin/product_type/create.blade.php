@@ -36,7 +36,7 @@
                   @csrf
                       <div class="form-group">
                           <label for="example-text-input">Tipe Produk</label>
-                          <input type="text" class="form-control" name="product_type_name" placeholder="Input Tipe Kategori">
+                          <input type="text" class="form-control" name="product_type_name" placeholder="Input Tipe Produk" value="{{ old('product_type_name') }}">
                       </div>
                       <div class="form-group text-right">
                           <a href="{{route('admin.productType.index')}}" class="btn btn-secondary">
@@ -54,4 +54,20 @@
   <!-- END Your Block -->
 </div>
 <!-- END Page Content -->
+@endsection
+
+@section('js')
+<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+<script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    $.notify({
+        title: '<strong>ERROR :</strong>',
+        message: '{{ $error }}',
+    }, {
+        type: 'danger'
+    });
+    @endforeach
+    @endif
+</script>
 @endsection

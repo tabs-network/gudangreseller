@@ -30,27 +30,36 @@
     <!-- Your Block -->
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="block">
-                <div class="block-content font-size-sm">
-                    <form action="{{route('admin.productCat.store')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
+            <form action="{{route('admin.productCat.store')}}" method="POST">
+                @csrf
+                <div class="block">
+                    <div class="block-content font-size-sm">
                         <div class="form-group">
-                            <label for="example-text-input">Kategori</label>
-                            <input type="text" class="form-control" name="product_cat_name" placeholder="Input Nama Kategori">
+                            <label for="example-text-input">Kategori Produk</label>
+                            <input type="text" class="form-control" name="product_cat_name" placeholder="Input Kategori Produk" value="{{old('product_cat_name')}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Deskripsi</label>
-                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi"></textarea>
+                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi">{{old('product_cat_desc')}}</textarea>
                         </div>
-                        <h2 class="content-heading border-bottom mb-4 pb-2">META CONFIG</h2>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content font-size-sm">
+
                         <div class="form-group">
                             <label for="example-text-input">Meta Title</label>
-                            <input type="text" class="form-control" name="product_cat_mt_title" placeholder="Input Meta Title">
+                            <input type="text" class="form-control" name="product_cat_mt_title" placeholder="Input Meta Title" value="{{old('product_cat_mt_title')}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Meta Deskripsi</label>
-                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_mt_desc" placeholder="Input Meta Deskripisi"></textarea>
+                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_mt_desc" placeholder="Input Meta Deskripisi">{{old('product_cat_mt_desc')}}</textarea>
                         </div>
+
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content font-size-sm">
                         <div class="form-group text-right">
                             <a href="{{route('admin.productCat.index')}}" class="btn btn-secondary">
                                 Kembali
@@ -59,10 +68,9 @@
                                 Submit
                             </button>
                         </div>
-
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- END Your Block -->

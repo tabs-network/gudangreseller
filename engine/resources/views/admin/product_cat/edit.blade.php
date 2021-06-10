@@ -30,28 +30,37 @@
     <!-- Your Block -->
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="block">
-                <div class="block-content font-size-sm">
-                    <form action="{{route('admin.productCat.update', $product_cat->product_cat_id)}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('put')
+            <form action="{{route('admin.productCat.update', $product_cat->product_cat_id)}}" method="POST">
+                @csrf
+                @method('put')
+                <div class="block">
+                    <div class="block-content font-size-sm">
                         <div class="form-group">
-                            <label for="example-text-input">Kategori</label>
-                            <input type="text" class="form-control" name="product_cat_name" placeholder="Input Nama Kategori" value="{{ $product_cat->product_cat_name }}">
+                            <label for="example-text-input">Kategori Produk</label>
+                            <input type="text" class="form-control" name="product_cat_name" placeholder="Input Kategori Produk" value="{{$product_cat->product_cat_name}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Deskripsi</label>
-                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi">{{ $product_cat->product_cat_desc }}</textarea>
+                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_desc" placeholder="Input Deksripsi">{{$product_cat->product_cat_desc}}</textarea>
                         </div>
-                        <h2 class="content-heading border-bottom mb-4 pb-2">META CONFIG</h2>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content font-size-sm">
+
                         <div class="form-group">
                             <label for="example-text-input">Meta Title</label>
-                            <input type="text" class="form-control" name="product_cat_mt_title" placeholder="Input Meta Title" value="{{ $product_cat->product_cat_mt_title }}">
+                            <input type="text" class="form-control" name="product_cat_mt_title" placeholder="Input Meta Title" value="{{$product_cat->product_cat_mt_title}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Meta Deskripsi</label>
-                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_mt_desc" placeholder="Input Meta Deskripisi">{{ $product_cat->product_cat_mt_desc }}</textarea>
+                            <textarea class="form-control" rows="5" id="summernote" name="product_cat_mt_desc" placeholder="Input Meta Deskripisi">{{$product_cat->product_cat_mt_desc}}</textarea>
                         </div>
+
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-content font-size-sm">
                         <div class="form-group text-right">
                             <a href="{{route('admin.productCat.index')}}" class="btn btn-secondary">
                                 Kembali
@@ -60,12 +69,29 @@
                                 Submit
                             </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- END Your Block -->
 </div>
 <!-- END Page Content -->
+@endsection
+
+@section('js')
+<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+
+<script>
+    @if($errors -> any())
+    @foreach($errors -> all() as $error)
+    $.notify({
+        title: '<strong>ERROR :</strong>',
+        message: '{{ $error }}',
+    }, {
+        type: 'danger'
+    });
+    @endforeach
+    @endif
+</script>
 @endsection

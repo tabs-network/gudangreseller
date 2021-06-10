@@ -67,12 +67,16 @@
                                     <i class="si si-settings"></i>
                                 </button>
                                 <div class="dropdown-menu font-size-sm" aria-labelledby="dropdown-default-primary" style="">
-                                    <a href="{{route('admin.productGender.edit', $v->product_gender_id)}}" class="dropdown-item" href="javascript:void(0)">
+                                    <a href="{{route('admin.productGender.edit', $v->product_gender_id)}}" class="dropdown-item">
                                         <i class="si si-pencil mr-2"></i>Edit
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="si si-trash mr-2"></i>Delete
-                                    </a>
+                                    <form action="{{route('admin.productGender.destroy', $v->product_gender_id)}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="si si-trash mr-2"></i>Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </td>

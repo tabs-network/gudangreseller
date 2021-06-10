@@ -22,7 +22,7 @@ class productGenderController extends Controller
 
     public function store(Request $request)
     {
-        $validate= $request->validate(
+        $validate = $request->validate(
             [
                 'product_gender_name' => 'required|unique:product_gender',
                 'product_gender_desc' => 'required',
@@ -118,6 +118,9 @@ class productGenderController extends Controller
 
     public function destroy($id)
     {
-        //
+        $product_gender = ProductGender::find($id);
+        $product_gender->delete();
+
+        return redirect()->route('admin.productGender.index')->with('status', 'Data Berhasil di Hapus');
     }
 }

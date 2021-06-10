@@ -22,12 +22,21 @@ class productCatController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-        'product_cat_name' => 'required|unique:product_cat',
-        'product_cat_desc' => 'required',
-        'product_cat_mt_title' => 'required',
-        'product_cat_mt_desc' => 'required',
-        ]);
+        $validate = $request->validate(
+            [
+                'product_cat_name' => 'required|unique:product_cat',
+                'product_cat_desc' => 'required',
+                'product_cat_mt_title' => 'required',
+                'product_cat_mt_desc' => 'required',
+            ],
+            [
+                'product_cat_name.required' => 'Nama Masih Kosong',
+                'product_cat_name.unique' => 'Nama Sudah Digunakan',
+                'product_cat_desc.required' => 'Deskripsi Masih Kosong',
+                'product_cat_mt_title.required' => 'Meta Title Masih Kosong',
+                'product_cat_mt_desc.required' => 'Meta Deskripsi Masih Kosong',
+            ]
+        );
 
 
         $product_cat = new ProductCat;
@@ -55,18 +64,67 @@ class productCatController extends Controller
     public function update(Request $request, $id)
     {
         $product_cat = ProductCat::find($id);
-        $product_cat->product_cat_name = $request->product_cat_name;
-        $product_cat->product_cat_desc = $request->product_cat_desc;
-        $product_cat->product_cat_slug = Str::of($request->product_cat_name)->slug('-');
-        $product_cat->product_cat_mt_title = $request->product_cat_mt_title;
-        $product_cat->product_cat_mt_desc = $request->product_cat_mt_desc;
-        $product_cat->save();
 
-        return redirect()->route('admin.productCat.index')->with('status', 'Data berhasil di edit');
+        if($request->product_cat_name == $product_cat->product_cat_name)
+        {
+            $validate = $request->validate(
+                [
+                    'product_cat_name' => 'required',
+                    'product_cat_desc' => 'required',
+                    'product_cat_mt_title' => 'required',
+                    'product_cat_mt_desc' => 'required',
+                ],
+                [
+                    'product_cat_name.required' => 'Nama Masih Kosong',
+                    'product_cat_desc.required' => 'Deskripsi Masih Kosong',
+                    'product_cat_mt_title.required' => 'Meta Title Masih Kosong',
+                    'product_cat_mt_desc.required' => 'Meta Deskripsi Masih Kosong',
+                ]
+            );
+
+            $product_cat->product_cat_name = $request->product_cat_name;
+            $product_cat->product_cat_desc = $request->product_cat_desc;
+            $product_cat->product_cat_slug = Str::of($request->product_cat_name)->slug('-');
+            $product_cat->product_cat_mt_title = $request->product_cat_mt_title;
+            $product_cat->product_cat_mt_desc = $request->product_cat_mt_desc;
+            $product_cat->save();
+
+            return redirect()->route('admin.productCat.index')->with('status', 'Data berhasil di edit');
+        }
+        else
+        {
+            $validate = $request->validate(
+                [
+                    'product_cat_name' => 'required|unique:product_cat',
+                    'product_cat_desc' => 'required',
+                    'product_cat_mt_title' => 'required',
+                    'product_cat_mt_desc' => 'required',
+                ],
+                [
+                    'product_cat_name.required' => 'Nama Masih Kosong',
+                    'product_cat_name.unique' => 'Nama Sudah Digunakan',
+                    'product_cat_desc.required' => 'Deskripsi Masih Kosong',
+                    'product_cat_mt_title.required' => 'Meta Title Masih Kosong',
+                    'product_cat_mt_desc.required' => 'Meta Deskripsi Masih Kosong',
+                ]
+            );
+
+            $product_cat->product_cat_name = $request->product_cat_name;
+            $product_cat->product_cat_desc = $request->product_cat_desc;
+            $product_cat->product_cat_slug = Str::of($request->product_cat_name)->slug('-');
+            $product_cat->product_cat_mt_title = $request->product_cat_mt_title;
+            $product_cat->product_cat_mt_desc = $request->product_cat_mt_desc;
+            $product_cat->save();
+
+            return redirect()->route('admin.productCat.index')->with('status', 'Data berhasil di edit');
+        }
     }
 
-    public function destroy(ProductCat $productCat)
+    public function destroy($id)
     {
-        //
+        $product_cat = ProductCat::find($id);
+        $product_cat->delete();
+
+        return redirect()->route('admin.productCat.index')->with('status', 'Data Berhasil di Hapus');
     }
 }

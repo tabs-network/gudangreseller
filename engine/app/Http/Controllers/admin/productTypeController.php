@@ -21,11 +21,21 @@ class productTypeController extends Controller
 
     public function store(Request $request)
     {
+        $validate= $request->validate(
+            [
+                'product_type_name' => 'required|unique:product_type',
+            ],
+            [
+                'product_type_name.required' => 'Tipe Produk Masih Kosong',
+                'product_type_name.unique' => 'Tipe Produk Sudah Terpakai',
+            ]
+        );
+
         $product_type = new ProductType;
         $product_type->product_type_name = $request->product_type_name;
         $product_type->save();
 
-        return redirect()->route('admin.productType.index');
+        return redirect()->route('admin.productType.index')->with('status', 'Data Berhasil di Input');
     }
 
     public function show($id)
@@ -42,14 +52,47 @@ class productTypeController extends Controller
     public function update(Request $request, $id)
     {
         $product_type = ProductType::find($id);
-        $product_type->product_type_name = $request->product_type_name;
-        $product_type->save();
 
-        return redirect()->route('admin.productType.index');
+        if($request->product_type_name == $product_type->product_type_name)
+        {
+            $validate= $request->validate(
+                [
+                    'product_type_name' => 'required',
+                ],
+                [
+                    'product_type_name.required' => 'Tipe Produk Masih Kosong',
+                ]
+            );
+
+            $product_type->product_type_name = $request->product_type_name;
+            $product_type->save();
+
+            return redirect()->route('admin.productType.index')->with('status', 'Data Berhasil di Edit');
+        }
+        else
+        {
+            $validate= $request->validate(
+                [
+                    'product_type_name' => 'required|unique:product_type',
+                ],
+                [
+                    'product_type_name.required' => 'Tipe Produk Masih Kosong',
+                    'product_type_name.unique' => 'Tipe Produk Sudah Tersedia',
+                ]
+            );
+
+            $product_type->product_type_name = $request->product_type_name;
+            $product_type->save();
+
+            return redirect()->route('admin.productType.index')->with('status', 'Data Berhasil di Edit');
+        }
     }
 
     public function destroy($id)
     {
-        //
+        $product_type = ProductType::find($id);
+        $product_type->delete();
+
+        return redirect()->route('admin.productType.index')->with('status', 'Data Berhasil di Hapus');
     }
 }
