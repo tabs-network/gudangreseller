@@ -12,12 +12,12 @@
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
                     <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Dashboard</a>
+                        <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Account</a>
+                        <a href="{{route('admin.product.index')}}">Product</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Current</li>
+                    <li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
                 </ol>
             </nav>
         </div>
@@ -31,7 +31,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
-            @csrf
+                @csrf
                 <div class="block">
                     <div class="block-header">
                         <h3 class="block-title">Upload Produk</h3>
@@ -54,7 +54,7 @@
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Nama Produk</label>
-                            <input type="text" class="form-control" name="product_name" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
+                            <input type="text" class="form-control" name="product_name" value="{{old('product_name')}}" placeholder="Contoh: Sepatu Pria (Jenis/Kategori Produk) + Tokostore (Merek) + Kanvas Hitam (Keterangan)">
                         </div>
                         <div class="form-group">
                             <label for="example-select">Kategori</label>
@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <label for="example-textarea-input">Deskripsi Produk</label>
                             <textarea class="form-control" name="product_desc" rows="8"
-placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
+                                placeholder="Sepatu Sneakers Pria Tokostore Kanvas Hitam Seri C28B
 
 - Model simple
 - Nyaman Digunakan
@@ -100,11 +100,11 @@ Ukuran
 42 : 27 cm
 43 : 27.5 - 28 cm
 
-Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain untuk bisa dipakai dalam berbagai acara. Sangat nyaman saat dipakai sehingga dapat menunjang penampilan dan kepercayaan dirimu. Beli sekarang sebelum kehabisan!"></textarea>
+Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain untuk bisa dipakai dalam berbagai acara. Sangat nyaman saat dipakai sehingga dapat menunjang penampilan dan kepercayaan dirimu. Beli sekarang sebelum kehabisan!">{{old('product_desc')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">URL Video Product</label>
-                            <input type="text" class="form-control" name="product_video" placeholder="Input Video Youtube URL">
+                            <input type="text" class="form-control" name="product_video" value="{{old('product_video')}}" placeholder="Input Video Youtube URL">
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Minimum Pemesanan</label>
-                            <input type="text" class="form-control" name="product_min_order" placeholder="Input Minimum Pesanan">
+                            <input type="text" class="form-control" name="product_min_order" value="{{old('product_min_order')}}" placeholder="Input Minimum Pesanan">
                         </div>
                         <div class="form-group">
                             <label>Harga Pasar</label>
@@ -125,7 +125,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                                         Rp
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" name="product_price" placeholder="Input Harga Pasar">
+                                <input type="text" class="form-control" name="product_price" value="{{old('product_price')}}" placeholder="Input Harga Pasar">
                             </div>
                         </div>
                         <div class="form-group">
@@ -134,7 +134,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Rp</span>
                                 </div>
-                                <input type="text" class="form-control" name="product_disc_price" placeholder="Input Harga Diskon">
+                                <input type="text" class="form-control" name="product_disc_price" value="{{old('product_disc_price')}}" placeholder="Input Harga Diskon">
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">SKU</label>
-                            <input type="text" class="form-control" name="product_sku" placeholder="Input SKU">
+                            <input type="text" class="form-control" name="product_sku" value="{{old('product_sku')}}" placeholder="Input SKU">
                         </div>
                         <div class="form-group">
                             <label for="example-select">Tipe Produk</label>
@@ -165,11 +165,11 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content">
                         <div class="form-group">
                             <label for="example-text-input">Meta Title</label>
-                            <input type="text" class="form-control" name="product_mt_title" placeholder="Input Meta Title">
+                            <input type="text" class="form-control" name="product_mt_title" value="{{old('product_mt_title')}}" placeholder="Input Meta Title">
                         </div>
                         <div class="form-group">
                             <label for="example-textarea-input">Meta Deksripsi</label>
-                            <textarea class="form-control" name="product_mt_desc" rows="4" placeholder="Input Meta Deskripsi"></textarea>
+                            <textarea class="form-control" name="product_mt_desc" rows="4" placeholder="Input Meta Deskripsi">{{old('product_mt_desc')}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -196,10 +196,24 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
 
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-$(document).ready(function() {
-$('.select2').select2();
-});
+<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
+<script>
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+</script>
+
+<script>
+    @if($errors -> any())
+    @foreach($errors -> all() as $error)
+    $.notify({
+        title: '<strong>ERROR :</strong>',
+        message: '{{ $error }}',
+    }, {
+        type: 'danger'
+    });
+    @endforeach
+    @endif
 </script>
 @endsection

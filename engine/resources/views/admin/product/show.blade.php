@@ -12,12 +12,12 @@
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
                     <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Dashboard</a>
+                        <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Account</a>
+                        <a href="{{route('admin.product.index')}}">Product</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Current</li>
+                    <li class="breadcrumb-item active" aria-current="page">Detail Produk</li>
                 </ol>
             </nav>
         </div>
@@ -111,9 +111,21 @@
 
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 <script>
     $(document).ready(function() {
         $('.select2').select2();
     });
+</script>
+
+<script>
+    @if (session('status'))
+    $.notify({
+        title: '<strong>SUKSES</strong><br>',
+        message: '{{ session('status') }}'
+    }, {
+        type: 'success'
+    });
+    @endif
 </script>
 @endsection

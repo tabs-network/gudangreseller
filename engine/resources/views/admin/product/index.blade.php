@@ -12,12 +12,9 @@
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
                     <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Dashboard</a>
+                        <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Account</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">Current</li>
+                    <li class="breadcrumb-item active" aria-current="page">Produk</li>
                 </ol>
             </nav>
         </div>
@@ -99,4 +96,18 @@
     <!-- END Your Block -->
 </div>
 <!-- END Page Content -->
+@endsection
+
+@section('js')
+<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+<script>
+    @if (session('status'))
+    $.notify({
+        title: '<strong>SUKSES</strong><br>',
+        message: '{{ session('status') }}'
+    }, {
+        type: 'success'
+    });
+    @endif
+</script>
 @endsection

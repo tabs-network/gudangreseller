@@ -38,7 +38,6 @@ class productCatController extends Controller
             ]
         );
 
-
         $product_cat = new ProductCat;
         $product_cat->product_cat_name = $request->product_cat_name;
         $product_cat->product_cat_desc = $request->product_cat_desc;
