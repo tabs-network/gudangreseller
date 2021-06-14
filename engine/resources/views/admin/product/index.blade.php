@@ -3,6 +3,7 @@
 
 @section('content')
 <!-- Hero -->
+
 <div class="bg-body-light">
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
@@ -25,26 +26,56 @@
 <!-- Page Content -->
 <div class="content">
     <!-- Your Block -->
-    <div class="block">
-        <div class="block-header">
-            <h3 class="block-title">
-                PRODUK
-            </h3>
-            <div class="block-options">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="example-group3-input1" name="example-group3-input1" placeholder="Cari">
-                    <div class="input-group-prepend">
-                        <span type="button" class="btn btn-primary">
-                            <i class="fa fa-search mr-1"></i>
-                        </span>
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <a class="block block-link-shadow text-center" href="{{route('admin.product.create')}}">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">
+                        <i class="fa fa-plus"></i>
                     </div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Tambah Produk
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="block block-link-shadow text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">{{$count}}</div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Total Produk
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="block">
         <div class="block-content font-size-sm">
-            <a href="{{route('admin.product.create')}}" class="btn btn-primary mr-1 mb-3">
-                <i class="fa fa-fw fa-plus"></i>
-            </a>
+            <form>
+                <div class="form-row justify-content-end">
+                    <div class="col-12 col-md-2 mb-2">
+                        <select class="form-control select2" style="width:100%;" name="sc">
+                            <option value="">Produk</option>
+                            <option value="">SKU</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-3 mb-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Cari">
+                            <div class="input-group-prepend">
+                                <span type="button" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>
                     <tr>
@@ -98,13 +129,25 @@
 <!-- END Page Content -->
 @endsection
 
+@section('css')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endsection
+
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+
 <script>
-    @if (session('status'))
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+</script>
+<script>
+    @if(session('status'))
     $.notify({
         title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('status') }}'
+        message: '{{ session('
+        status ') }}'
     }, {
         type: 'success'
     });

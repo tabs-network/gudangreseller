@@ -14,10 +14,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-light bg-light">
         @include('web._template.navbar')
     </nav>
-
     <div class="container pt-3">
         <div class="card">
             <div class="card-body">

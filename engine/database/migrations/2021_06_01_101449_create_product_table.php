@@ -24,6 +24,7 @@ class CreateProductTable extends Migration
             $table->string('product_slug');
             $table->string('product_mt_title');
             $table->string('product_mt_desc');
+            $table->integer('product_count')->nullable();
             $table->timestamps();
         });
     }

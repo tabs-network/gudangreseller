@@ -1,45 +1,52 @@
 <?php
 
-namespace App\Http\Controllers\web;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Jenssegers\Agent\Agent;
-use App\Models\Product;
-use App\Models\ProductCat;
-class webProductController extends Controller
+class admCartController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $agent = new Agent;
-        if($agent->isMobile()){
-            return 'tampilan mobile';
-        }
-        elseif($agent->isTablet()){
-            return view('web.product.index');
-        }
-        else
-        {
-            $product = Product::get();
-            $product_cat = ProductCat::get();
-            return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
-        }
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         //
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        return view('web.product.show');
+        //
     }
 
     /**

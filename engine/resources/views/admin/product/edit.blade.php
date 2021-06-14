@@ -28,25 +28,28 @@
 <!-- Page Content -->
 <div class="content">
     <!-- Your Block -->
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
-            @csrf
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">Upload Produk</h3>
-                    </div>
-                    <div class="block-content">
-                        <div class="form-group">
-                            <label>Cover Produk</label>
-                            <div class="custom-file">
-                                <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
-                                <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-custom" name="product_cover">
-                                <label class="custom-file-label" for="example-file-input-custom">Choose file</label>
-                            </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="block">
+                <div class="block-content">
+                    <img src="{{url('engine/storage/app/product/300x300/'.$product->product_cover )}}" alt="" width="100%">
+                    <div class="form-group">
+                        <label>Ganti Cover</label>
+                        <div class="custom-file">
+                            <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
+                            <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="example-file-input-custom" name="product_cover">
+                            <label class="custom-file-label" for="example-file-input-custom">Choose file</label>
                         </div>
                     </div>
+                    <div class="form-group text-right">
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="block">
                     <div class="block-header">
                         <h3 class="block-title">Informasi Produk</h3>
@@ -61,6 +64,14 @@
                             <select class="form-control select2" name="product_cat_id">
                                 @foreach($product_cat as $v)
                                 <option value="{{ $v->product_cat_id }}" {{ ($v->product_cat_id == $product->product_cat_id) ? 'selected' : '' }}>{{ $v->product_cat_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-select">Gender</label>
+                            <select class="form-control select2" name="product_cat_id">
+                                @foreach($product_gender as $v)
+                                <option value="{{ $v->product_gender_id }}" {{ ($v->product_gender_id == $product->product_gender_id) ? 'selected' : '' }}>{{ $v->product_gender_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -118,10 +129,6 @@
                     </div>
                     <div class="block-content">
                         <div class="form-group">
-                            <label for="example-text-input">Stok</label>
-                            <input type="text" class="form-control" name="product_stock" placeholder="Text Input" value="{{ $product->product_stock }}">
-                        </div>
-                        <div class="form-group">
                             <label for="example-text-input">SKU</label>
                             <input type="text" class="form-control" name="product_sku" placeholder="Text Input" value="{{ $product->product_sku }}">
                         </div>
@@ -161,7 +168,6 @@
             </form>
         </div>
     </div>
-
     <!-- END Your Block -->
 </div>
 <!-- END Page Content -->
@@ -175,7 +181,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     $(document).ready(function() {
-    $('.select2').select2();
+        $('.select2').select2();
     });
 </script>
 @endsection

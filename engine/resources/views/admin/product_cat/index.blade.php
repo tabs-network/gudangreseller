@@ -28,26 +28,50 @@
 <!-- Page Content -->
 <div class="content">
     <!-- Your Block -->
-    <div class="block">
-        <div class="block-header">
-            <h3 class="block-title">
-                KATEGORI PRODUK
-            </h3>
-            <div class="block-options">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="example-group3-input1" name="example-group3-input1" placeholder="Cari">
-                    <div class="input-group-prepend">
-                        <span type="button" class="btn btn-primary">
-                            <i class="fa fa-search mr-1"></i>
-                        </span>
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <a class="block block-link-shadow text-center" href="{{route('admin.productCat.create')}}">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">
+                        <i class="fa fa-plus"></i>
                     </div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Tambah Produk
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="block block-link-shadow text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">5</div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Total Produk
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="block">
         <div class="block-content font-size-sm">
-            <a href="{{route('admin.productCat.create')}}" class="btn btn-primary mr-1 mb-3">
-                <i class="fa fa-fw fa-plus"></i>
-            </a>
+            <form>
+                <div class="form-row justify-content-end">
+                    <div class="col-12 col-md-3 mb-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Cari">
+                            <div class="input-group-prepend">
+                                <span type="button" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>
                     <tr>

@@ -177,7 +177,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                     <div class="block-content text-right">
                         <div class="form-group">
                             <a href="{{route('admin.product.index')}}" type="submit" class="btn btn-secondary">Kembali</a>
-                            <button type="submit" class="btn btn-primary">Next</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>

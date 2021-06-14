@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 use App\Models\ProductGender;
-class productGenderController extends Controller
+class admProductGenderController extends Controller
 {
     public function index()
     {

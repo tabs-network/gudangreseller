@@ -27,6 +27,34 @@
 
 <!-- Page Content -->
 <div class="content">
+    <div class="row">
+        <div class="col-6 col-lg-3">
+            <a class="block block-link-shadow text-center" href="{{route('admin.productType.create')}}">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Tambah Produk
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="block block-link-shadow text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full">
+                    <div class="font-size-h2 text-primary">5</div>
+                </div>
+                <div class="block-content py-2 bg-body-light">
+                    <p class="font-w600 font-size-sm text-primary mb-0">
+                        Total Produk
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Your Block -->
     <div class="block">
         <div class="block-header">

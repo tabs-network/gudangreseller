@@ -7,7 +7,7 @@ use App\Models\ProductCat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class productCatController extends Controller
+class admProductCatController extends Controller
 {
     public function index()
     {

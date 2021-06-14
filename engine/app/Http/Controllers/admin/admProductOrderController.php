@@ -1,30 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\web;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Jenssegers\Agent\Agent;
-use App\Models\Product;
-use App\Models\ProductCat;
-class webProductController extends Controller
+class admProductOrderController extends Controller
 {
     public function index()
     {
-        $agent = new Agent;
-        if($agent->isMobile()){
-            return 'tampilan mobile';
-        }
-        elseif($agent->isTablet()){
-            return view('web.product.index');
-        }
-        else
-        {
-            $product = Product::get();
-            $product_cat = ProductCat::get();
-            return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
-        }
+        return view('admin.product_order.index');
     }
 
     public function create()
@@ -39,7 +24,7 @@ class webProductController extends Controller
 
     public function show($id)
     {
-        return view('web.product.show');
+        //
     }
 
     /**

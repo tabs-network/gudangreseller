@@ -13,12 +13,13 @@ use App\Models\ProductCat;
 use App\Models\ProductType;
 use App\Models\ProductGender;
 use App\Models\ProductSize;
-class productController extends Controller
+class admProductController extends Controller
 {
     public function index()
     {
         $product = Product::get();
-        return view('admin.product.index', ['product' => $product ]);
+        $count = Product::get()->count();
+        return view('admin.product.index', ['product' => $product, 'count' => $count]);
     }
 
     public function create()
@@ -113,7 +114,8 @@ class productController extends Controller
         $product = Product::find($id);
         $product_cat = ProductCat::get();
         $product_type = ProductType::get();
-        return view('admin.product.edit', ['product' => $product, 'product_cat' => $product_cat, 'product_type' => $product_type]);
+        $product_gender = ProductGender::get();
+        return view('admin.product.edit', ['product' => $product, 'product_cat' => $product_cat, 'product_type' => $product_type, 'product_gender' => $product_gender]);
     }
 
     public function update(Request $request, $id)
