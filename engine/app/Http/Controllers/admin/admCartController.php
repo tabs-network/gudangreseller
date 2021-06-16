@@ -5,81 +5,70 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Product;
 class admCartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+
+    }
+
+    public function cart_store(Request $request, $id)
+    {
+        $product = Product::find($id);
+        \Cart::add([
+            'id' => $id,
+            'name' => $product->product_name,
+            'qty' => $request->product_order_qty,
+            'price' => $product->product_price,
+
+            'options' => [
+                'size' => $request->product_size_option,
+                'image' => $product->product_cover,
+            ]
+        ]);
+        return redirect()->route('admin.order.create');
+    }
+
+    public function cart_destroy()
+    {
+        \Cart::destroy();
+        return redirect()->route('admin.order.create');
+    }
+
+    public function cart_checkout()
+    {
+        return view('admin.cart.checkout');
     }
 }

@@ -7,7 +7,7 @@ use App\Http\Controllers\admin\admDashboardController;
 use App\Http\Controllers\admin\admProductCatController;
 use App\Http\Controllers\admin\admProductController;
 use App\Http\Controllers\admin\admProductGenderController;
-use App\Http\Controllers\admin\admProductOrderController;
+use App\Http\Controllers\admin\admOrderController;
 use App\Http\Controllers\admin\admProductTypeController;
 
 // WebsiteController
@@ -26,9 +26,16 @@ Route::get('login-admin', [loginAdminController::class, 'index'])->name('login.a
 
 // Admin Route
 Route::resource('admin/dashboard', admDashboardController::class)->only('index')->names('admin.dashboard');
+
+// Product
 Route::resource('admin/product', admProductController::class)->names('admin.product');
-Route::post('admin/product/add-size/{id}', 'App\Http\Controllers\admin\productController@add_size')->name('admin.product.addSize');
+Route::post('admin/product/add-size/{id}', 'App\Http\Controllers\admin\admProductController@add_size')->name('admin.product.addSize');
 Route::resource('admin/product-category', admProductCatController::class)->names('admin.productCat');
 Route::resource('admin/product-type', admProductTypeController::class)->names('admin.productType');
 Route::resource('admin/product-gender', admProductGenderController::class)->names('admin.productGender');
-Route::resource('admin/product-order', admProductOrderController::class)->names('admin.productOrder');
+Route::resource('admin/product-order', admOrderController::class)->names('admin.order');
+
+// Cart
+Route::post('admin/product/product-cart/{id}/add', 'App\Http\Controllers\admin\admCartController@cart_store')->name('admin.cart.store');
+Route::get('admin/product/product-cart/checkout', 'App\Http\Controllers\admin\admCartController@cart_checkout')->name('admin.cart.checkout');
+Route::get('admin/product/product-cart/destroy', 'App\Http\Controllers\admin\admCartController@cart_destroy')->name('admin.cart.destroy');

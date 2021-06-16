@@ -1,17 +1,20 @@
 /* Product */
-.link-product{
+.no-decor{
     text-decoration: none;
-    color:#263238;
+    color: black;
 }
-.link-product:hover{
-    text-decoration: none;
-    color:#263238;
-}
-.link-product .card-body h3 {
-    font-size:15px;
-    font-weight: bold;
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
-.link-product .card-body p {
-    font-weight: bold;
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0;
 }

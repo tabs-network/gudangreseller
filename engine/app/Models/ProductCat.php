@@ -11,4 +11,9 @@ class ProductCat extends Model
 
     protected $table = 'product_cat';
     protected $primaryKey = 'product_cat_id';
+
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'product_gender_id');
+    }
 }

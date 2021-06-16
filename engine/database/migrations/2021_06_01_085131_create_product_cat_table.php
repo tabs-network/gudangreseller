@@ -14,7 +14,7 @@ class CreateProductCatTable extends Migration
             $table->string('product_cat_slug');
             $table->string('product_cat_desc');
             $table->string('product_cat_mt_title');
-            $table->string('product_cat_mt_desc');
+            $table->text('product_cat_mt_desc');
             $table->timestamps();
         });
     }

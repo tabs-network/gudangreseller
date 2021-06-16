@@ -19,7 +19,7 @@ class CreateProductGenderTable extends Migration
             $table->string('product_gender_desc');
             $table->string('product_gender_slug');
             $table->string('product_gender_mt_title');
-            $table->string('product_gender_mt_desc');
+            $table->text('product_gender_mt_desc');
             $table->timestamps();
         });
     }

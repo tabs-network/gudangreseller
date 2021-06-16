@@ -19,6 +19,16 @@ class Product extends Model
 
     public function product_cat()
     {
-        return $this->hasOne(ProductCat::class, 'product_cat_id');
+        return $this->belongsTo(ProductCat::class, 'product_cat_id');
+    }
+
+    public function product_gender()
+    {
+        return $this->belongsTo(ProductGender::class, 'product_gender_id');
+    }
+
+    public function product_type()
+    {
+        return $this->belongsTo(ProductType::class, 'product_type_id');
     }
 }

@@ -61,7 +61,7 @@
         </li>
         <li class="nav-main-heading">Heading</li>
         <li class="nav-main-item">
-            <a class="nav-main-link {{(request()->RouteIs('admin.productOrder.*'))  ? 'active' : ''}}" href="{{ route('admin.productOrder.index') }}">
+            <a class="nav-main-link {{(request()->RouteIs('admin.order.*'))  ? 'active' : ''}}" href="{{ route('admin.order.index') }}">
                 <i class="nav-main-link-icon si si-speedometer"></i>
                 <span class="nav-main-link-name">Pemesanan Produk</span>
             </a>

@@ -11,4 +11,9 @@ class ProductGender extends Model
 
     protected $table = 'product_gender';
     protected $primaryKey = 'product_gender_id';
+
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'product_gender_id');
+    }
 }
