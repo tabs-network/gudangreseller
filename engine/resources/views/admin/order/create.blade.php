@@ -49,7 +49,7 @@
             <div class="row">
                 @foreach($product as $v)
                 <div class="col-6 col-lg-4">
-                    <a href="{{route('admin.order.show',$v->product_id)}}">
+                    <a href="{{route('admin.order.showAddCart',$v->product_id)}}">
                         <div class="block">
                             <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="" width="100%">
                             <div class="block-content">

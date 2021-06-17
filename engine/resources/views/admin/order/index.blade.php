@@ -55,46 +55,7 @@
         </div>
     </div>
     <div class="bg-white p-3 push">
-        <!-- Toggle Navigation -->
-        <div class="d-lg-none">
-            <!-- Class Toggle, functionality initialized in Helpers.coreToggleClass() -->
-            <button type="button" class="btn btn-block btn-light d-flex justify-content-between align-items-center" data-toggle="class-toggle" data-target="#horizontal-navigation-hover-normal" data-class="d-none">
-                Menu - Hover Normal
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-        <!-- END Toggle Navigation -->
-
-        <!-- Navigation -->
-        <div id="horizontal-navigation-hover-normal" class="d-none d-lg-block mt-2 mt-lg-0">
-            <ul class="nav-main nav-main-horizontal nav-main-hover">
-                <li class="nav-main-item">
-                    <a class="nav-main-link active" href="be_ui_navigation_horizontal.php">
-                        <span class="nav-main-link-name">Semua Pesanan</span>
-                        <span class="nav-main-link-badge badge badge-pill badge-primary">5</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link active" href="be_ui_navigation_horizontal.php">
-                        <span class="nav-main-link-name">Pesanan Baru</span>
-                        <span class="nav-main-link-badge badge badge-pill badge-primary">5</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link active" href="be_ui_navigation_horizontal.php">
-                        <span class="nav-main-link-name">Siap Dikirim</span>
-                        <span class="nav-main-link-badge badge badge-pill badge-primary">5</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link active" href="be_ui_navigation_horizontal.php">
-                        <span class="nav-main-link-name">Dalam Pengiriman</span>
-                        <span class="nav-main-link-badge badge badge-pill badge-primary">5</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- END Navigation -->
+        @include('admin.order.navigation')
     </div>
     <div class="block">
         <div class="block-content">
@@ -114,7 +75,7 @@
                         @foreach($order as $v)
                         <tr>
                             <td class="font-w600 font-size-sm">
-                                {{$v->order_transaction_code}}
+                                <a href="{{ route('admin.order.show', $v->order_id) }}">{{$v->order_transaction_code}}</a>
                             </td>
                             <td>
                                 <span class="badge badge-info">{{$v->order_status}}</span>

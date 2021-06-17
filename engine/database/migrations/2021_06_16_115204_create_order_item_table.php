@@ -17,6 +17,7 @@ class CreateOrderItemTable extends Migration
             $table->id('order_item_id');
             $table->string('order_item_price');
             $table->string('order_item_quantity');
+            $table->string('order_item_size');
             $table->string('order_transaction_code');
             $table->integer('product_id');
             $table->integer('order_id');
