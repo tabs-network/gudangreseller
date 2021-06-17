@@ -17,6 +17,12 @@ class admOrderController extends Controller
         return view('admin.order.index', ['order' => $order]);
     }
 
+    public function indexNewOrder()
+    {
+        $order = Order::get();
+        return view('admin.order.indexNewOrder', ['order' => $order]);
+    }
+
     public function create()
     {
         $product = Product::get();
@@ -39,9 +45,10 @@ class admOrderController extends Controller
         $order->save();
 
         $order = Order::where('order_transaction_code', $order_transaction_code)->first();
-        $order_item = new OrderItem;
+
         foreach(\Cart::content() as $v)
         {
+            $order_item = new OrderItem;
             $order_item->order_item_price = $v->price;
             $order_item->order_item_quantity = $v->qty;
             $order_item->order_item_size = $v->options->size;
@@ -88,7 +95,9 @@ Terima Kasih 😀'
 
     public function show($id)
     {
-        return view('admin.order.show');
+        $order = Order::find($id);
+        $order_item = OrderItem::where('order_id', $id)->get();
+        return view('admin.order.show', ['order' => $order, 'order_item' => $order_item]);
     }
 
     public function show_addcart($id)

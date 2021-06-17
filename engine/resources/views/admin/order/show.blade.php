@@ -28,14 +28,13 @@
     <!-- Your Block -->
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Products</h3>
+            <h3 class="block-title">Kode Transaksi : {{$order->order_transaction_code}}</h3>
         </div>
         <div class="block-content">
             <div class="table-responsive">
                 <table class="table table-borderless table-striped table-vcenter font-size-sm">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 100px;">ID</th>
                             <th>Product Name</th>
                             <th class="text-center">Stock</th>
                             <th class="text-center">QTY</th>
@@ -44,41 +43,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($order_item as $v)
                         <tr>
-                            <td class="text-center"><a href="be_pages_ecom_product_edit.php"><strong>PID.965</strong></a></td>
-                            <td><a href="be_pages_ecom_product_edit.php">Dark Souls III</a></td>
+                            <td><a href="be_pages_ecom_product_edit.php">{{$v->product->product_name}}</a></td>
                             <td class="text-center">50</td>
                             <td class="text-center"><strong>1</strong></td>
                             <td class="text-right">$59,00</td>
-                            <td class="text-right">$59,00</td>
+                            <td class="text-right">Rp.{{number_format($v->order_item_price)}}</td>
                         </tr>
+                        @endforeach
                         <tr>
-                            <td class="text-center"><a href="be_pages_ecom_product_edit.php"><strong>PID.755</strong></a></td>
-                            <td><a href="be_pages_ecom_product_edit.php">Control</a></td>
-                            <td class="text-center">68</td>
-                            <td class="text-center"><strong>1</strong></td>
-                            <td class="text-right">$59,00</td>
-                            <td class="text-right">$59,00</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><a href="be_pages_ecom_product_edit.php"><strong>PID.235</strong></a></td>
-                            <td><a href="be_pages_ecom_product_edit.php">Forza Motorsport 7</a></td>
-                            <td class="text-center">23</td>
-                            <td class="text-center"><strong>1</strong></td>
-                            <td class="text-right">$59,00</td>
-                            <td class="text-right">$59,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-right"><strong>Total Price:</strong></td>
-                            <td class="text-right">$177,00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-right"><strong>Total Paid:</strong></td>
-                            <td class="text-right">$177,00</td>
+                            <td colspan="4" class="text-right"><strong>Ongkos Kirim:</strong></td>
+                            <td class="text-right">Rp.{{number_format($order->order_shipping_charges)}}</td>
                         </tr>
                         <tr class="table-success">
-                            <td colspan="5" class="text-right text-uppercase"><strong>Total Due:</strong></td>
-                            <td class="text-right"><strong>$0,00</strong></td>
+                            <td colspan="4" class="text-right text-uppercase"><strong>Total Due:</strong></td>
+                            <td class="text-right"><strong>Rp.{{number_format($order->order_total_cost + $order->order_shipping_charges)}}</strong></td>
                         </tr>
                     </tbody>
                 </table>

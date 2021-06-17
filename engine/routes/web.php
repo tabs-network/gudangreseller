@@ -34,7 +34,9 @@ Route::resource('admin/product-category', admProductCatController::class)->names
 Route::resource('admin/product-type', admProductTypeController::class)->names('admin.productType');
 Route::resource('admin/product-gender', admProductGenderController::class)->names('admin.productGender');
 
+// Order
 Route::resource('admin/product-order', admOrderController::class)->names('admin.order');
+Route::get('admin/product-order/t/new-order', 'App\Http\Controllers\admin\admOrderController@indexNewOrder')->name('admin.order.indexNewOrder');
 Route::get('admin/product-order/{id}/show-add-cart', 'App\Http\Controllers\admin\admOrderController@show_addcart')->name('admin.order.showAddCart');
 
 // Cart

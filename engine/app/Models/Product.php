@@ -31,4 +31,9 @@ class Product extends Model
     {
         return $this->belongsTo(ProductType::class, 'product_type_id');
     }
+
+    public function OrderItem()
+    {
+        return $this->hasOne(OrderItem::class, 'product_id');
+    }
 }
