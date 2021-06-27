@@ -31,6 +31,20 @@ class admOrderController extends Controller
 
     public function store(Request $request)
     {
+        $validate = $request->validate([
+            'order_shipping_charges' => 'required',
+            'order_name_reseller' => 'required',
+            'order_name_reseller' => 'required',
+            'order_name_receiver' => 'required',
+            'order_phone_receiver' => 'required',
+
+            'alamat' => 'required',
+            'provinsi' => 'required',
+            'kecamatan' => 'required',
+            'kota' => 'required',
+            'kodepos' => 'required',
+        ]);
+
         $order_transaction_code = 'GR'.'-'.Carbon::now()->format('Ymd-Hm').'-'.rand(1111,9999);
         $order_address_reciever = $request->alamat.',' .$request->provinsi.',' .$request->kecamatan.',' .$request->kota.',' .$request->kodepos;
         $order = new Order;

@@ -25,13 +25,19 @@
         </li>
         <li class="nav-main-item">
             <a class="nav-main-link" href="be_ui_navigation_horizontal.php">
-                <span class="nav-main-link-name">Siap Dikirim</span>
+                <span class="nav-main-link-name">Packing</span>
                 <!-- <span class="nav-main-link-badge badge badge-pill badge-primary">5</span> -->
             </a>
         </li>
         <li class="nav-main-item">
             <a class="nav-main-link" href="be_ui_navigation_horizontal.php">
-                <span class="nav-main-link-name">Dalam Pengiriman</span>
+                <span class="nav-main-link-name">Kirim</span>
+                <!-- <span class="nav-main-link-badge badge badge-pill badge-primary">5</span> -->
+            </a>
+        </li>
+        <li class="nav-main-item">
+            <a class="nav-main-link" href="be_ui_navigation_horizontal.php">
+                <span class="nav-main-link-name">Retur</span>
                 <!-- <span class="nav-main-link-badge badge badge-pill badge-primary">5</span> -->
             </a>
         </li>

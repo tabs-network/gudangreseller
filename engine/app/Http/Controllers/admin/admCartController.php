@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 use App\Models\Product;
 class admCartController extends Controller
@@ -58,7 +59,7 @@ class admCartController extends Controller
                 'image' => $product->product_cover,
             ]
         ]);
-        return redirect()->route('admin.order.create');
+        return redirect()->route('admin.order.create')->with('status', 'Keranjang berhasil di update');
     }
 
     public function cart_destroy()
@@ -69,6 +70,13 @@ class admCartController extends Controller
 
     public function cart_checkout()
     {
-        return view('admin.cart.checkout');
+        if(\Cart::count() == '')
+        {
+            return redirect()->route('admin.order.create')->with('error', 'Keranjang masih kosong');
+        }
+        else{
+            return view('admin.cart.checkout');
+        }
+
     }
 }

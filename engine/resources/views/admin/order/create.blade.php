@@ -111,14 +111,14 @@
                                         Total
                                     </td>
                                     <td class="font-w600 font-size-sm">
-                                        Rp.{{\Cart::total()}}
+                                        Rp.{{number_format(\Cart::total())}}
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="form-group text-right">
-                        <a href="{{route('admin.cart.destroy')}}" class="btn btn-secondary">Batal</a>
+                        <a href="{{route('admin.cart.destroy')}}" class="btn btn-secondary">Reset Keranjang</a>
                         <a href="{{route('admin.cart.checkout')}}" class="btn btn-primary">Checkout</a>
                     </div>
                 </div>
@@ -137,10 +137,19 @@
     @if(session('status'))
     $.notify({
         title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('
-        status ') }}'
+        message: '{{ session('status') }}'
     }, {
         type: 'success'
+    });
+    @endif
+</script>
+<script>
+    @if(session('error'))
+    $.notify({
+        title: '<strong>ERROR</strong><br>',
+        message: '{{ session('error') }}'
+    }, {
+        type: 'danger'
     });
     @endif
 </script>

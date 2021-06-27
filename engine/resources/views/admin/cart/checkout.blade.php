@@ -40,7 +40,8 @@
                                 <th>Product Name</th>
                                 <th class="text-center" style="width: 100px;">Ukuran</th>
                                 <th class="text-center" style="width: 100px;">Jumlah</th>
-                                <th class="text-right" style="width: 150px;">Harga</th>
+                                <th class="text-right" style="width: 150px;">Harga Satuan</th>
+                                <th class="text-right" style="width: 150px;">Harga Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,20 +51,20 @@
                                 <td class="text-center">{{$v->options->size}}</td>
                                 <td class="text-center"><strong>{{$v->qty}}</strong></td>
                                 <td class="text-right">Rp.{{number_format($v->price)}}</td>
+                                <td class="text-right">Rp.{{number_format($v->price * $v->qty)}}</td>
                             </tr>
                             @endforeach
                             <tr class="table">
-                                <td colspan="3" class="text-right text-uppercase"><strong>Ongkos Kirim:</strong></td>
+                                <td colspan="4" class="text-right text-uppercase"><strong>Ongkos Kirim:</strong></td>
                                 <td class="text-right">
                                     <input type="text" class="form-control" name="order_shipping_charges" placeholder="Ongkos Kirim" value="0" id="ongkos_kirim" onchange="total()" style="text-align:right;">
                                 </td>
                             </tr>
                             <tr class="table-success">
-                                <td colspan="3" class="text-right text-uppercase"><strong>Total:</strong></td>
+                                <td colspan="4" class="text-right text-uppercase"><strong>Total:</strong></td>
                                 <td class="text-right">
-                                    <input align="right" type="text" class="form-control" value="{{\Cart::total()}}" id="total_all" style="text-align:right;">
+                                    <input align="right" type="text" class="form-control" value="{{\Cart::total()}}" id="total_all" style="text-align:right;" disabled>
                                 </td>
-                                <!-- <td class="text-right"><strong>Rp.{{number_format(\Cart::total())}}</strong></td> -->
                             </tr>
                         </tbody>
                     </table>
@@ -78,7 +79,7 @@
             <div class="block-content">
                 <div class="form-group">
                     <label for="example-text-input">Seller</label>
-                    <input type="text" class="form-control" name="order_name_reseller" placeholder="Input Nama Seller">
+                    <input type="text" class="form-control" name="order_name_reseller" placeholder="Input Nama Seller" value="{{old('order_name_reseller')}}">
                 </div>
             </div>
         </div>
@@ -89,40 +90,40 @@
             <div class="block-content">
                 <div class="form-group">
                     <label for="example-text-input">Nama Penerima</label>
-                    <input type="text" class="form-control" name="order_name_receiver" placeholder="Input Penerima">
+                    <input type="text" class="form-control" name="order_name_receiver" placeholder="Input Penerima" value="{{old('order_name_receiver')}}">
                 </div>
                 <div class="form-group">
                     <label for="example-textarea-input">Alamat</label>
-                    <textarea class="form-control" name="alamat" rows="4" placeholder="Input Alamat Penerima"></textarea>
+                    <textarea class="form-control" name="alamat" rows="4" placeholder="Input Alamat Penerima">{{old('alamat')}}</textarea>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="example-text-input">Provinsi</label>
-                            <input type="text" class="form-control" name="provinsi" placeholder="Input Provinsi">
+                            <input type="text" class="form-control" name="provinsi" placeholder="Input Provinsi" value="{{old('provinsi')}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Kecamatan</label>
-                            <input type="text" class="form-control" name="kecamatan" placeholder="Input Kecamatan">
+                            <input type="text" class="form-control" name="kecamatan" placeholder="Input Kecamatan" value="{{old('kecamatan')}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">No.HP</label>
-                            <input type="text" class="form-control" name="order_phone_receiver" placeholder="Input Nomor HP">
+                            <input type="text" class="form-control" name="order_phone_receiver" placeholder="Input Nomor HP" value="{{old('order_phone_receiver')}}">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="example-text-input">Kota</label>
-                            <input type="text" class="form-control" name="kota" placeholder="Input Kota">
+                            <input type="text" class="form-control" name="kota" placeholder="Input Kota" value="{{old('kota')}}">
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">Kode Pos</label>
-                            <input type="text" class="form-control" name="kodepos" placeholder="Input Kode Pos">
+                            <input type="text" class="form-control" name="kodepos" placeholder="Input Kode Pos" value="{{old('kodepos')}}">
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-right">
-                    <a href="#" class="btn btn-secondary">Kembali</a>
+                    <a href="{{route('admin.order.create')}}" class="btn btn-secondary">Kembali</a>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="form-group">
@@ -161,6 +162,18 @@ function total() {
     }, {
         type: 'success'
     });
+    @endif
+</script>
+<script>
+    @if($errors -> any())
+    @foreach($errors -> all() as $error)
+    $.notify({
+        title: '<strong>ERROR :</strong>',
+        message: '{{ $error }}',
+    }, {
+        type: 'danger'
+    });
+    @endforeach
     @endif
 </script>
 @endsection
