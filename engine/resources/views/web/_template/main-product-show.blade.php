@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url('assets/website/css/style.css')}}">
 
@@ -14,9 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light bg-light">
-        @include('web._template.navbar')
-    </nav>
+    @include('web._template.navbar')
     <div class="container pt-3">
         <div class="card">
             <div class="card-body">

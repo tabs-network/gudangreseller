@@ -119,7 +119,7 @@
                     </div>
                     <div class="form-group text-right">
                         <a href="{{route('admin.cart.destroy')}}" class="btn btn-secondary">Reset Keranjang</a>
-                        <a href="{{route('admin.cart.checkout')}}" class="btn btn-primary">Checkout</a>
+                        <a href="{{route('admin.order.checkout')}}" class="btn btn-primary">Checkout</a>
                     </div>
                 </div>
             </div>
@@ -131,26 +131,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
-<script>
-    @if(session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('status') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
-<script>
-    @if(session('error'))
-    $.notify({
-        title: '<strong>ERROR</strong><br>',
-        message: '{{ session('error') }}'
-    }, {
-        type: 'danger'
-    });
-    @endif
-</script>
 @endsection

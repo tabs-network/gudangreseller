@@ -45,7 +45,7 @@
                     <tbody>
                         @foreach($order_item as $v)
                         <tr>
-                            <td><a href="be_pages_ecom_product_edit.php">{{$v->product->product_name}}</a></td>
+                            <td><a href="#">{{$v->product->product_name}}</a></td>
                             <td class="text-center">50</td>
                             <td class="text-center"><strong>1</strong></td>
                             <td class="text-right">$59,00</td>
@@ -71,17 +71,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
-<script>
-    @if(session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('
-        status ') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
 @endsection

@@ -56,11 +56,11 @@
     </div>
     <div class="block">
         <div class="block-content font-size-sm">
-            <form action="{{route('admin.product.search')}}" method="GET" role="search">
+            <form action="{{route('admin.product.search')}}" method="GET">
                 <div class="form-row justify-content-end">
                     <div class="col-12 col-md-3 mb-2">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="key" placeholder="Produk/SKU">
+                            <input type="text" class="form-control" name="key" placeholder="Produk/SKU" value="{{$key}}">
                             <div class="input-group-prepend">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>
@@ -87,7 +87,7 @@
                         </td>
                         <td class="font-size-sm">
                             <p class="font-w600 mb-1">
-                                <a href="{{route('admin.product.show', $v->product_id)}}">{{ $v->product_name}}</a>
+                                <a href="{{route('admin.product.show', $v->product_slug)}}">{{ $v->product_name}}</a>
                             </p>
                             <p class="text-muted mb-0">
                                 SKU : {{$v->product_sku}}
@@ -100,7 +100,7 @@
                                     <i class="si si-settings"></i>
                                 </button>
                                 <div class="dropdown-menu font-size-sm" aria-labelledby="dropdown-default-primary" style="">
-                                    <a href="{{route('admin.product.show', $v->product_id)}}" class="dropdown-item" href="javascript:void(0)">
+                                    <a href="{{route('admin.product.show', $v->product_slug)}}" class="dropdown-item" href="javascript:void(0)">
                                         <i class="si si-eye mr-2"></i>Detail
                                     </a>
                                     <a href="{{route('admin.product.edit', $v->product_id)}}" class="dropdown-item" href="javascript:void(0)">

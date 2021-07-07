@@ -18,7 +18,7 @@ class CreateOrderTable extends Migration
             $table->string('order_transaction_code');
             $table->string('order_total_cost');
             $table->string('order_shipping_charges');
-            $table->string('order_name_reseller');
+            $table->string('order_name_seller');
             $table->string('order_name_receiver');
             $table->string('order_phone_receiver');
             $table->string('order_address_receiver');

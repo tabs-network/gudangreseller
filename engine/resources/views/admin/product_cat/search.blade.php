@@ -1,21 +1,23 @@
 @extends('admin._template.main')
-@section('title', 'Produk')
+@section('title', 'Kategori Produk')
 
 @section('content')
 <!-- Hero -->
-
 <div class="bg-body-light">
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
             <h1 class="flex-sm-fill h3 my-2">
-                PRODUK
+                KATEGORI PRODUK
             </h1>
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
                     <li class="breadcrumb-item">
                         <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Produk</li>
+                    <li class="breadcrumb-item">
+                        <a href="{{route('admin.product.index')}}">Product</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Kategori Produk</li>
                 </ol>
             </nav>
         </div>
@@ -28,7 +30,7 @@
     <!-- Your Block -->
     <div class="row">
         <div class="col-6 col-lg-3">
-            <a class="block block-link-shadow text-center" href="{{route('admin.product.create')}}">
+            <a class="block block-link-shadow text-center" href="{{route('admin.productCat.create')}}">
                 <div class="block-content block-content-full">
                     <div class="font-size-h2 text-primary">
                         <i class="fa fa-plus"></i>
@@ -44,7 +46,7 @@
         <div class="col-6 col-lg-3">
             <div class="block block-link-shadow text-center" href="javascript:void(0)">
                 <div class="block-content block-content-full">
-                    <div class="font-size-h2 text-primary">{{$count}}</div>
+                    <div class="font-size-h2 text-primary">5</div>
                 </div>
                 <div class="block-content py-2 bg-body-light">
                     <p class="font-w600 font-size-sm text-primary mb-0">
@@ -54,13 +56,14 @@
             </div>
         </div>
     </div>
+
     <div class="block">
         <div class="block-content font-size-sm">
-            <form action="{{route('admin.product.search')}}" method="GET" role="search">
+            <form action="{{route('admin.productCat.search')}}" method="GET">
                 <div class="form-row justify-content-end">
                     <div class="col-12 col-md-3 mb-2">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="key" placeholder="Produk/SKU">
+                            <input type="text" class="form-control" name="key" placeholder="Cari" value="{{$key}}">
                             <div class="input-group-prepend">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>
@@ -73,42 +76,32 @@
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>
                     <tr>
-                        <th style="width:70px;"></th>
-                        <th>PRODUK</th>
-                        <th style="width:100px;">HARGA</th>
-                        <th class="text-center" style="width: 100px;"></th>
+                        <th>KATEGORI</th>
+                        <th class="text-center" style="width: 100px;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($product as $v)
+                    @foreach($product_cat as $v)
                     <tr>
-                        <td>
-                            <img src="{{url('engine/storage/app/product/150x150/'.$v->product_cover)}}" class="rounded" alt="" width="70">
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.php">{{$v->product_cat_name}}</a>
                         </td>
-                        <td class="font-size-sm">
-                            <p class="font-w600 mb-1">
-                                <a href="{{route('admin.product.show', $v->product_id)}}">{{ $v->product_name}}</a>
-                            </p>
-                            <p class="text-muted mb-0">
-                                SKU : {{$v->product_sku}}
-                            </p>
-                        </td>
-                        <td class="font-size-sm">Rp.{{ number_format($v->product_price)}}</td>
                         <td class="text-center">
                             <div class="dropdown dropleft">
-                                <button type="button" class="btn btn-primary" id="dropdown-default-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-sm btn-primary" id="dropdown-default-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="si si-settings"></i>
                                 </button>
                                 <div class="dropdown-menu font-size-sm" aria-labelledby="dropdown-default-primary" style="">
-                                    <a href="{{route('admin.product.show', $v->product_id)}}" class="dropdown-item" href="javascript:void(0)">
-                                        <i class="si si-eye mr-2"></i>Detail
-                                    </a>
-                                    <a href="{{route('admin.product.edit', $v->product_id)}}" class="dropdown-item" href="javascript:void(0)">
+                                    <a href="{{route('admin.productCat.edit', $v->product_cat_id)}}" class="dropdown-item">
                                         <i class="si si-pencil mr-2"></i>Edit
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="si si-trash mr-2"></i>Delete
-                                    </a>
+                                    <form action="{{route('admin.productCat.destroy', $v->product_cat_id)}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="si si-trash mr-2"></i>Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </td>
@@ -124,11 +117,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
-<script>
-    $(document).ready(function() {
-        $('.select2').select2();
-    });
-</script>
 @endsection

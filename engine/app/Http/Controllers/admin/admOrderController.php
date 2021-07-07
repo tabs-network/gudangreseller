@@ -33,8 +33,7 @@ class admOrderController extends Controller
     {
         $validate = $request->validate([
             'order_shipping_charges' => 'required',
-            'order_name_reseller' => 'required',
-            'order_name_reseller' => 'required',
+            'order_name_seller' => 'required',
             'order_name_receiver' => 'required',
             'order_phone_receiver' => 'required',
 
@@ -51,7 +50,7 @@ class admOrderController extends Controller
         $order->order_transaction_code = $order_transaction_code;
         $order->order_total_cost = \Cart::total();
         $order->order_shipping_charges = $request->order_shipping_charges;
-        $order->order_name_reseller = $request->order_name_reseller;
+        $order->order_name_seller = $request->order_name_seller;
         $order->order_name_receiver = $request->order_name_receiver;
         $order->order_phone_receiver = $request->order_phone_receiver;
         $order->order_address_receiver = $order_address_reciever;
@@ -114,7 +113,7 @@ Terima Kasih 😀'
         return view('admin.order.show', ['order' => $order, 'order_item' => $order_item]);
     }
 
-    public function show_addcart($id)
+    public function showAddCart($id)
     {
         $product = Product::find($id);
         $product_size = Product::find($id)->product_size;
@@ -134,5 +133,16 @@ Terima Kasih 😀'
     public function destroy($id)
     {
         //
+    }
+
+    public function checkout()
+    {
+        if(\Cart::count() == '')
+        {
+            return redirect()->route('admin.order.create')->with('error', 'Keranjang masih kosong');
+        }
+        else{
+            return view('admin.order.checkout');
+        }
     }
 }

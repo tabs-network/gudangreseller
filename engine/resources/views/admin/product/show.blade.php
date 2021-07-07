@@ -62,15 +62,15 @@
                             <tr>
                                 <form action="{{route('admin.product.addSize', $product->product_id)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" name="product_size_option" placeholder="Input Ukuran">
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" name="product_size_stock" placeholder="Input Stok">
-                                </td>
-                                <td class="text-center">
-                                    <button type="submit" class="btn btn-sm btn-primary">Input</button>
-                                </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm" name="product_size_option" placeholder="Input Ukuran">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm" name="product_size_stock" placeholder="Input Stok">
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="submit" class="btn btn-sm btn-primary">Input</button>
+                                    </td>
                                 </form>
                             </tr>
                             @foreach($product_size as $v)
@@ -105,27 +105,10 @@
 <!-- END Page Content -->
 @endsection
 
-@section('css')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@endsection
-
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 <script>
     $(document).ready(function() {
         $('.select2').select2();
     });
-</script>
-
-<script>
-    @if (session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('status') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
 </script>
 @endsection

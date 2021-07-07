@@ -11,8 +11,9 @@ class admProductGenderController extends Controller
 {
     public function index()
     {
+        $count = ProductGender::count();
         $product_gender = ProductGender::get();
-        return view('admin.product_gender.index', ['product_gender' => $product_gender]);
+        return view('admin.product_gender.index', ['product_gender' => $product_gender, 'count' => $count]);
     }
 
     public function create()

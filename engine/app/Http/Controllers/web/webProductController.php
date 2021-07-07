@@ -37,9 +37,13 @@ class webProductController extends Controller
         //
     }
 
-    public function show($id)
+    public function show(Request $request, $slug)
     {
-        return view('web.product.show');
+        // $product = Product::where('product_slug', $slug)->first();
+        // $product->product_count = $product->product_count + 1;
+        // $product->save();
+        // return view('web.product.show', ['product' => $product]);
+        return $request->header('referer');
     }
 
     /**

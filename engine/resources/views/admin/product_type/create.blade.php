@@ -57,17 +57,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-<script>
-    @if($errors->any())
-    @foreach($errors->all() as $error)
-    $.notify({
-        title: '<strong>ERROR :</strong>',
-        message: '{{ $error }}',
-    }, {
-        type: 'danger'
-    });
-    @endforeach
-    @endif
-</script>
+
 @endsection

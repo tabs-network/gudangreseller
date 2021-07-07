@@ -112,17 +112,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
-<script>
-    @if(session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('
-        status ') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
 @endsection

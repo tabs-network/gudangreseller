@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Builder;
 
 use App\Models\Product;
 use App\Models\ProductCat;
@@ -39,7 +40,7 @@ class admProductController extends Controller
                 'product_cat_id' => 'required',
                 'product_gender_id' => 'required',
                 'product_desc' => 'required',
-                'product_video' => 'required',
+                'product_video_url' => 'required',
                 'product_min_order' => 'required|numeric',
                 'product_price' => 'required|numeric',
                 'product_disc_price' => 'required|numeric',
@@ -57,7 +58,7 @@ class admProductController extends Controller
                 'product_cat_id.required' => 'Kategori Harus di Isi',
                 'product_gender_id.required' => 'Gender Harus di Isi',
                 'product_desc.required' => 'Deskripsi Harus di Isi',
-                'product_video.required' => 'URL Video Harus di Isi',
+                'product_video_url.required' => 'URL Video Harus di Isi',
                 'product_min_order.required' => 'Minimal Order Harus di Isi',
                 'product_min_order.numeric' => 'Minimal Order Harus di Isi Angka',
                 'product_price.required' => 'Harga Harus di Isi',
@@ -80,12 +81,13 @@ class admProductController extends Controller
         $product->product_cat_id = $request->product_cat_id;
         $product->product_gender_id = $request->product_gender_id;
         $product->product_desc = $request->product_desc;
-        $product->product_video = $request->product_video;
+        $product->product_video_url = $request->product_video_url;
         $product->product_min_order = $request->product_min_order;
         $product->product_price = $request->product_price;
         $product->product_disc_price = $request->product_disc_price;
         $product->product_sku = $request->product_sku;
         $product->product_type_id = $request->product_type_id;
+        $product->product_status_id = $request->product_status_id;
         $product->product_mt_title = $request->product_mt_title;
         $product->product_mt_desc = $request->product_mt_desc;
         $product->product_slug = Str::of($request->product_name)->slug('-');
@@ -98,13 +100,15 @@ class admProductController extends Controller
         Image::make($request->file('product_cover'))->resize(300, 300)->save(storage_path('app/product/300x300/'.$sku.'.'.$ext));
         Image::make($request->file('product_cover'))->resize(150, 150)->save(storage_path('app/product/150x150/'.$sku.'.'.$ext));
 
-        return redirect()->route('admin.product.show', Str::of($request->product_name)->slug('-'))->with('status', 'Data Berhasil di Input, Silahkan Isi Ukuran Dan Stok');
+
+        $getProductId = Product::orderByDesc('product_id')->first()->product_id;
+        return redirect()->route('admin.product.show', $getProductId)->with('status', 'Data Berhasil di Input, Silahkan Isi Ukuran Dan Stok');
 
     }
 
     public function show($id)
     {
-        $product = Product::where('product_slug', $id)->first();
+        $product = Product::find($id);
         $product_size = Product::find($product->product_id)->product_size;
         return view('admin.product.show', ['product' => $product,'product_size' => $product_size]);
     }
@@ -128,7 +132,7 @@ class admProductController extends Controller
         //
     }
 
-    public function add_size(Request $request, $id)
+    public function addSize(Request $request, $id)
     {
         $product = Product::find($id);
         $product_size = new ProductSize;
@@ -136,6 +140,13 @@ class admProductController extends Controller
         $product_size->product_size_stock = $request->product_size_stock;
         $product_size->product_id = $id;
         $product_size->save();
-        return redirect()->route('admin.product.show', $product->product_slug);
+        return redirect()->route('admin.product.show', $product->product_id)->with('status', 'Ukuran dan Stok Berhasil Ditambah');
+    }
+
+    public function search(Request $request)
+    {
+        $count = Product::get()->count();
+        $product = Product::where('product_name', 'like', '%'.$request->key.'%')->orWhere('product_sku', 'like', '%'.$request->key.'%')->get();
+        return view('admin.product.search', ['product' => $product, 'key' => $request->key, 'count' => $count]);
     }
 }

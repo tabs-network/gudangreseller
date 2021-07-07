@@ -79,7 +79,7 @@
             <div class="block-content">
                 <div class="form-group">
                     <label for="example-text-input">Seller</label>
-                    <input type="text" class="form-control" name="order_name_reseller" placeholder="Input Nama Seller" value="{{old('order_name_reseller')}}">
+                    <input type="text" class="form-control" name="order_name_seller" placeholder="Input Nama Seller" value="{{old('order_name_seller')}}">
                 </div>
             </div>
         </div>
@@ -142,7 +142,6 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 <script type="text/javascript">
 function total() {
     var ongkos_kirim = parseInt(document.getElementById('ongkos_kirim').value);
@@ -152,28 +151,5 @@ function total() {
 
     document.getElementById('total_all').value = jumlah_harga;
     }
-</script>
-<script>
-    @if(session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('
-        status ') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
-<script>
-    @if($errors -> any())
-    @foreach($errors -> all() as $error)
-    $.notify({
-        title: '<strong>ERROR :</strong>',
-        message: '{{ $error }}',
-    }, {
-        type: 'danger'
-    });
-    @endforeach
-    @endif
 </script>
 @endsection

@@ -30,8 +30,11 @@
     @yield('css')
     <!-- Fonts and OneUI framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
-    <link rel="stylesheet" id="css-main" href="https://cdn.jsdelivr.net/gh/yosepkandiyas/cdn/oneui/css/oneui.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" id="css-main" href="{{ url('assets/dashboard/css/style.css') }}">
+
+    <link rel="stylesheet" id="css-main" href="https://cdn.jsdelivr.net/gh/yosepkandiyas/cdn/oneui/css/oneui.min.css">
+
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
@@ -114,6 +117,42 @@
     <!-- OneUI JS -->
     <script src="https://cdn.jsdelivr.net/gh/yosepkandiyas/cdn/oneui/js/oneui.core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/yosepkandiyas/cdn/oneui/js/oneui.app.min.js"></script>
+    <script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        @if(session('status'))
+        $.notify({
+            title: '<strong>SUKSES</strong><br>',
+            message: '{{ session('status') }}'
+        }, {
+            type: 'success'
+        });
+        @endif
+    </script>
+    <script>
+        @if(session('error'))
+        $.notify({
+            title: '<strong>ERROR</strong><br>',
+            message: '{{ session('error') }}'
+        }, {
+            type: 'danger'
+        });
+        @endif
+    </script>
+
+    <script>
+        @if($errors -> any())
+        @foreach($errors -> all() as $error)
+        $.notify({
+            title: '<strong>ERROR :</strong>',
+            message: '{{ $error }}',
+        }, {
+            type: 'danger'
+        });
+        @endforeach
+        @endif
+    </script>
     @yield('js')
 </body>
 

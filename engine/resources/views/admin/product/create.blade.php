@@ -104,7 +104,7 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">URL Video Product</label>
-                            <input type="text" class="form-control" name="product_video" value="{{old('product_video')}}" placeholder="Input Video Youtube URL">
+                            <input type="text" class="form-control" name="product_video_url" value="{{old('product_video')}}" placeholder="Input Video Youtube URL">
                         </div>
                     </div>
                 </div>
@@ -150,10 +150,17 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
                         </div>
                         <div class="form-group">
                             <label for="example-select">Tipe Produk</label>
-                            <select class="form-control select2" name="product_type_id">\
+                            <select class="form-control select2" name="product_type_id">
                                 @foreach($product_type as $v)
                                 <option value="{{ $v->product_type_id }}">{{ $v->product_type_name }}</option>
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-select">Status Produk</label>
+                            <select class="form-control select2" name="product_status_id">
+                                <option value="1">Aktif</option>
+                                <option value="2">Non Aktif</option>
                             </select>
                         </div>
                     </div>
@@ -190,30 +197,10 @@ Edisi terbatas dari Tokostore dengan model baru dan trendy untukmu. Didesain unt
 <!-- END Page Content -->
 @endsection
 
-@section('css')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@endsection
-
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-
 <script>
     $(document).ready(function() {
         $('.select2').select2();
     });
-</script>
-
-<script>
-    @if($errors -> any())
-    @foreach($errors -> all() as $error)
-    $.notify({
-        title: '<strong>ERROR :</strong>',
-        message: '{{ $error }}',
-    }, {
-        type: 'danger'
-    });
-    @endforeach
-    @endif
 </script>
 @endsection

@@ -67,16 +67,4 @@ class admCartController extends Controller
         \Cart::destroy();
         return redirect()->route('admin.order.create');
     }
-
-    public function cart_checkout()
-    {
-        if(\Cart::count() == '')
-        {
-            return redirect()->route('admin.order.create')->with('error', 'Keranjang masih kosong');
-        }
-        else{
-            return view('admin.cart.checkout');
-        }
-
-    }
 }

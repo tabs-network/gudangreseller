@@ -11,8 +11,9 @@ class admProductCatController extends Controller
 {
     public function index()
     {
+        $count = ProductCat::count();
         $product_cat = ProductCat::get();
-        return view('admin.product_cat.index', ['product_cat' => $product_cat]);
+        return view('admin.product_cat.index', ['product_cat' => $product_cat, 'count' => $count]);
     }
 
     public function create()
@@ -125,5 +126,11 @@ class admProductCatController extends Controller
         $product_cat->delete();
 
         return redirect()->route('admin.productCat.index')->with('status', 'Data Berhasil di Hapus');
+    }
+
+    public function search(Request $request)
+    {
+        $product_cat = ProductCat::where('product_cat_name', 'like', '%'.$request->key.'%')->get();
+        return view('admin.product_cat.search', ['product_cat' => $product_cat, 'key' => $request->key]);
     }
 }

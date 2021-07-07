@@ -46,27 +46,28 @@
         <div class="col-6 col-lg-3">
             <div class="block block-link-shadow text-center" href="javascript:void(0)">
                 <div class="block-content block-content-full">
-                    <div class="font-size-h2 text-primary">5</div>
+                    <div class="font-size-h2 text-primary">{{$count}}</div>
                 </div>
                 <div class="block-content py-2 bg-body-light">
                     <p class="font-w600 font-size-sm text-primary mb-0">
-                        Total Produk
+                        Total Kategori
                     </p>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="block">
         <div class="block-content font-size-sm">
-            <form>
+            <form action="{{route('admin.productCat.search')}}" method="GET">
                 <div class="form-row justify-content-end">
                     <div class="col-12 col-md-3 mb-2">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Cari">
+                            <input type="text" class="form-control" name="key" placeholder="Cari">
                             <div class="input-group-prepend">
-                                <span type="button" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>
-                                </span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -116,15 +117,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-<script>
-    @if (session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('status') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
+
 @endsection

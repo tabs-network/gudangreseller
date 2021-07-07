@@ -64,8 +64,9 @@
                     <thead>
                         <tr>
                             <th>KODE TRANSAKSI</th>
+                            <th style="width: 15%;">Tanggal Pesanan</th>
                             <th style="width: 15%;">Status</th>
-                            <th style="width: 15%;">Reseller</th>
+                            <th style="width: 15%;">Seller</th>
                             <th style="width: 15%;">Penerima</th>
                             <th style="width: 15%;">Harga</th>
                             <th class="text-center" style="width: 100px;">Actions</th>
@@ -78,10 +79,13 @@
                                 <a href="{{ route('admin.order.show', $v->order_id) }}">{{$v->order_transaction_code}}</a>
                             </td>
                             <td>
+                                {{$v->created_at->format('d M Y')}}
+                            </td>
+                            <td>
                                 <span class="badge badge-info">{{$v->order_status}}</span>
                             </td>
                             <td class="font-w600 font-size-sm">
-                                {{$v->order_name_reseller}}
+                                {{$v->order_name_seller}}
                             </td>
                             <td class="font-w600 font-size-sm">
                                 {{$v->order_name_receiver}}
@@ -112,17 +116,5 @@
 @endsection
 
 @section('js')
-<script src="{{url('assets/dashboard/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
-<script>
-    @if(session('status'))
-    $.notify({
-        title: '<strong>SUKSES</strong><br>',
-        message: '{{ session('
-        status ') }}'
-    }, {
-        type: 'success'
-    });
-    @endif
-</script>
 @endsection

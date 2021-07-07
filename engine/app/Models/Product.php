@@ -14,7 +14,7 @@ class Product extends Model
 
     public function product_size()
     {
-        return $this->hasMany(ProductSize::class, 'product_id');
+        return $this->hasMany(ProductSize::class, 'product_id')->orderBy('product_size_option');
     }
 
     public function product_cat()
