@@ -48,8 +48,9 @@
             </div>
         </div>
         <div class="col-md-9">
-            <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.product.update', $product->product_id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="block">
                     <div class="block-header">
                         <h3 class="block-title">Informasi Produk</h3>
@@ -69,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="example-select">Gender</label>
-                            <select class="form-control select2" name="product_cat_id">
+                            <select class="form-control select2" name="product_gender_id">
                                 @foreach($product_gender as $v)
                                 <option value="{{ $v->product_gender_id }}" {{ ($v->product_gender_id == $product->product_gender_id) ? 'selected' : '' }}>{{ $v->product_gender_name }}</option>
                                 @endforeach
@@ -88,7 +89,7 @@
                         </div>
                         <div class="form-group">
                             <label for="example-text-input">URL Video Product</label>
-                            <input type="text" class="form-control" name="product_video" placeholder="Text Input" value="{{ $product->product_video }}">
+                            <input type="text" class="form-control" name="product_video_url" placeholder="Text Input" value="{{ $product->product_video_url }}">
                         </div>
                     </div>
                 </div>
@@ -138,6 +139,13 @@
                                 @foreach($product_type as $v)
                                 <option value="{{ $v->product_type_id }}">{{ $v->product_type_name }}</option>
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-select">Status Produk</label>
+                            <select class="form-control select2" name="product_status_id">
+                                <option value="1">Aktif</option>
+                                <option value="2">Non Aktif</option>
                             </select>
                         </div>
                     </div>

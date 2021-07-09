@@ -21,7 +21,7 @@ class webProductController extends Controller
         }
         else
         {
-            $product = Product::get();
+            $product = Product::paginate(9);
             $product_cat = ProductCat::get();
             return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
         }
@@ -39,19 +39,13 @@ class webProductController extends Controller
 
     public function show(Request $request, $slug)
     {
-        // $product = Product::where('product_slug', $slug)->first();
-        // $product->product_count = $product->product_count + 1;
-        // $product->save();
-        // return view('web.product.show', ['product' => $product]);
-        return $request->header('referer');
+        $product = Product::where('product_slug', $slug)->first();
+        $product_related = Product::where('product_cat_id', $product->product_cat_id)->take(8)->get();
+        $product->product_count = $product->product_count + 1;
+        $product->save();
+        return view('web.product.show', ['product' => $product, 'product_related' => $product_related]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //

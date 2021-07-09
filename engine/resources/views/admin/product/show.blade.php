@@ -42,7 +42,58 @@
                     <h3 class="block-title">Detail</h3>
                 </div>
                 <div class="block-content">
-
+                <table class="table table-borderless table-vcenter">
+                        <tbody>
+                            <tr>
+                                <th class="font-w600 font-size-sm" width="150">
+                                    Nama Produk
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    : {{$product->product_name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="font-w600 font-size-sm">
+                                    Kategori
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    : {{$product->product_cat->product_cat_name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="font-w600 font-size-sm">
+                                    Gender
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    : {{$product->product_gender->product_gender_name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="font-w600 font-size-sm">
+                                    SKU
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    : {{$product->product_sku}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="font-w600 font-size-sm">
+                                    Tipe Produk
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    : {{$product->product_type->product_type_name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="font-w600 font-size-sm">
+                                    Deskripsi Produk
+                                </th>
+                                <td class="font-w600 font-size-sm">
+                                    {{$product->product_desc}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="block">

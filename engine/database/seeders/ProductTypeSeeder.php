@@ -16,9 +16,11 @@ class ProductTypeSeeder extends Seeder
         \DB::table('product_type')->delete();
         $data = array(
             [
+                'product_type_id' => 1,
                 'product_type_name' => 'Stock',
             ],
             [
+                'product_type_id' => 2,
                 'product_type_name' => 'Pre Order',
             ]
         );

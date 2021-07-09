@@ -11,8 +11,9 @@ minima, .')
         <div class="bg-light-1 shadow-sm p-3">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="#" class="txt-decoration-none"><span>Home</span></a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('web.product.index')}}" class="txt-decoration-none"><span>Produk</span></a></li>
+                    <li class="breadcrumb-item"><a href="{{route('web.home.index')}}" class="txt-decoration-none"><span>Home</span></a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="{{route('web.product.index')}}" class="txt-decoration-none"><span>Produk</span></a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="#" class="txt-decoration-none"><span>{{$product->product_cat->product_cat_name}}</span></a></li>
                     <li class="breadcrumb-item active" aria-current="page"><a href="{{url()->current()}}" class="txt-decoration-none"><span>{{$product->product_name}}</span></a></li>
                 </ol>
             </nav>
@@ -20,8 +21,7 @@ minima, .')
     </div>
 </div>
 
-
-<div class="container pt-3 mb-3">
+<div class="container pt-3 mb-5">
     <div class="bg-light-1 shadow-sm p-3">
         <div class="row">
             <div class="col-md-4 mb-3">
@@ -53,19 +53,19 @@ minima, .')
                 </div>
             </div>
             <div class="col-md-8">
-                <h1 class="h3">{{$product->product_name}}</h1>
+                <h1 class="h3 fw-light">{{$product->product_name}}</h1>
                 <span class="badge bg-secondary">12 Kali Dilihat</span>
-                <p class="h2 mt-4 md-4"><b>Rp.125.000</b></p>
+                <p class="h2 mt-4 md-4"><b>Rp.{{number_format($product->product_price)}}</b></p>
                 <hr>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link cl-dark-1 active" id="deskripsi-tab" data-bs-toggle="tab" data-bs-target="#deskripsi" type="button" role="tab" aria-controls="home" aria-selected="true">Deskripsi</button>
+                        <button class="nav-link active cl-dark-2" id="deskripsi-tab" data-bs-toggle="tab" data-bs-target="#deskripsi" type="button" role="tab" aria-controls="home" aria-selected="true">Deskripsi</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link cl-dark-1" id="speasifikasi-tab" data-bs-toggle="tab" data-bs-target="#speasifikasi" type="button" role="tab" aria-controls="profile" aria-selected="false">Spesifikasi</button>
+                        <button class="nav-link cl-dark-2" id="speasifikasi-tab" data-bs-toggle="tab" data-bs-target="#speasifikasi" type="button" role="tab" aria-controls="profile" aria-selected="false">Spesifikasi</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link cl-dark-1" id="stok-tab" data-bs-toggle="tab" data-bs-target="#stok" type="button" role="tab" aria-controls="contact" aria-selected="false">Stok</button>
+                        <button class="nav-link cl-dark-2" id="stok-tab" data-bs-toggle="tab" data-bs-target="#stok" type="button" role="tab" aria-controls="contact" aria-selected="false">Stok</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -74,19 +74,19 @@ minima, .')
                         <p><a class="txt-decoration-none" href="{{url()->current()}}">{{$product->product_name}}</a> - {{$product->product_desc}}</p>
                     </div>
                     <div class="tab-pane fade p-3" id="speasifikasi" role="tabpanel" aria-labelledby="profile-tab">
-                        <table class="table">
+                        <table class="table cl-dark-2">
                             <tbody>
                                 <tr>
                                     <th style="width:200px;">Kategori</th>
-                                    <td>: Sepatu Sneakers</td>
+                                    <td>: {{$product->product_cat->product_cat_name}}</td>
                                 </tr>
                                 <tr>
                                     <th style="width:200px;">Genre</th>
-                                    <td>: Fashion Pria</td>
+                                    <td>: {{$product->product_gender->product_gender_name}}</td>
                                 </tr>
                                 <tr>
-                                    <th style="width:200px;">Stok</th>
-                                    <td>: 20</td>
+                                    <th style="width:200px;">Kode SKU</th>
+                                    <td>: {{$product->product_sku}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -106,6 +106,24 @@ minima, .')
             </div>
         </div>
     </div>
+</div>
 
+<div class="section-light mb-5">
+    <div class="container">
+        <h3 class="h3 fw-light">{{$product->product_cat->product_cat_name}} Lainnya</h3>
+        <div class="row">
+            @foreach($product_related as $v)
+                <div class="col-6 col-md-3 col-lg-3 mb-3">
+                    <a href="{{route('web.product.show', $v->product_slug)}}" class="txt-decoration-none">
+                    <img src="{{url('engine/storage/app/product/500x500/'.$v->product_cover)}}" alt="{{$v->product_name}}" width="100%">
+                    <div class="bg-light-1 shadow-sm p-3">
+                        <h3 class="h6 fw-light">{{$v->product_name}}</h3>
+                        <p class="h4">Rp.{{number_format($v->product_price)}}</p>
+                    </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
 </div>
 @endsection

@@ -14,13 +14,20 @@ use App\Http\Controllers\admin\admProductTypeController;
 // WebsiteController
 use App\Http\Controllers\web\webHomeController;
 use App\Http\Controllers\web\webProductController;
+use App\Http\Controllers\web\webProductCatController;
 
 // Login Admin
 use App\Http\Controllers\loginAdmin\loginAdminController;
 
+
+
 // Website Route
 Route::get('/', [webHomeController::class, 'index'])->name('web.home.index');
-Route::resource('product', webProductController::class)->names('web.product');
+Route::get('product/', [webProductController::class, 'index'])->name('web.product.index');
+Route::get('product/{slug}/', [webProductController::class, 'show'])->name('web.product.show');
+
+Route::get('category/{slug}', [webProductCatController::class, 'show'])->name('web.productCat.show');
+
 // Login Admin
 Route::get('login-admin', [loginAdminController::class, 'showFormLogin'])->name('login.admin.showFormLogin');
 Route::post('login-admin', [loginAdminController::class, 'login'])->name('login.admin');

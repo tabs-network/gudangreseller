@@ -16,6 +16,7 @@ class ProductGenderSeeder extends Seeder
         \DB::table('product_gender')->delete();
         $data = array(
             [
+                'product_gender_id' => '1',
                 'product_gender_name' => 'Fashion Pria',
                 'product_gender_desc' => 'Tentang Fashion Pria',
                 'product_gender_slug' => 'fashion-pria',
@@ -23,6 +24,7 @@ class ProductGenderSeeder extends Seeder
                 'product_gender_mt_desc' => 'Tentang Fashion Pria',
             ],
             [
+                'product_gender_id' => '2',
                 'product_gender_name' => 'Fashion Wanita',
                 'product_gender_desc' => 'Tentang Fashion Wanita',
                 'product_gender_slug' => 'fashion-wanita',
@@ -30,6 +32,7 @@ class ProductGenderSeeder extends Seeder
                 'product_gender_mt_desc' => 'Tentang Fashion Wanita',
             ],
             [
+                'product_gender_id' => '3',
                 'product_gender_name' => 'Fashion Anak',
                 'product_gender_desc' => 'Tentang Fashion Anak',
                 'product_gender_slug' => 'fashion-pria',
@@ -37,6 +40,7 @@ class ProductGenderSeeder extends Seeder
                 'product_gender_mt_desc' => 'Tentang Fashion Anak',
             ],
             [
+                'product_gender_id' => '4',
                 'product_gender_name' => 'Fashion Custom',
                 'product_gender_desc' => 'Tentang Fashion Custom',
                 'product_gender_slug' => 'fashion-pria',

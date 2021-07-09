@@ -3,7 +3,6 @@
 
 @section('content')
 <!-- Hero -->
-
 <div class="bg-body-light">
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
@@ -70,6 +69,7 @@
                     </div>
                 </div>
             </form>
+            
             <table class="table table-bordered table-striped table-vcenter">
                 <thead>
                     <tr>
@@ -116,6 +116,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="d-flex justify-content-end">
+                {{$product->links()}}
+            </div>
         </div>
     </div>
     <!-- END Your Block -->

@@ -18,7 +18,7 @@ class admProductController extends Controller
 {
     public function index()
     {
-        $product = Product::get();
+        $product = Product::paginate(10);
         $count = Product::get()->count();
         return view('admin.product.index', ['product' => $product, 'count' => $count]);
     }
@@ -124,7 +124,23 @@ class admProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->product_name = $request->product_name;
+        $product->product_cat_id = $request->product_cat_id;
+        $product->product_gender_id = $request->product_gender_id;
+        $product->product_desc = $request->product_desc;
+        $product->product_video_url = $request->product_video_url;
+        $product->product_min_order = $request->product_min_order;
+        $product->product_price = $request->product_price;
+        $product->product_disc_price = $request->product_disc_price;
+        $product->product_sku = $request->product_sku;
+        $product->product_type_id = $request->product_type_id;
+        $product->product_status_id = $request->product_status_id;
+        $product->product_mt_title = $request->product_mt_title;
+        $product->product_mt_desc = $request->product_mt_desc;
+        $product->product_slug = Str::of($request->product_name)->slug('-');
+        $product->save();
+        return redirect()->route('admin.product.index')->with('status', 'Data Berhasil di Edit');
     }
 
     public function destroy(Product $product)
