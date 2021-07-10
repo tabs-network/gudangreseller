@@ -1,10 +1,8 @@
 @extends('web._template.main')
 
-@section('mtTitle', 'ASdasdsaaddad')
-@section('mtDesc', 'Written by A.N. Author, Illustrated by V. Gogh, Price: $17.99, Length: 784 pages, Lorem ipsum dolor
-sit amet, consectetur adipisicing elit. Debitis doloremque id nobis quaerat voluptatibus, laudantium cupiditate velit
-tempora,ipsa
-minima, .')
+@section('mtTitle', $product->product_mt_title)
+@section('mtDesc', $product->product_mt_desc)
+@section('mtImg', url('engine/storage/app/product/500x500/'.$product->product_cover))
 @section('title', $product->product_name)
 
 @section('content')

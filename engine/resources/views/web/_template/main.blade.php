@@ -13,7 +13,7 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="@yield('mtTitle')" />
     <meta property="og:description" content="@yield('mtDesc')" />
-    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property="og:image" content="@yield('mtImg')" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@nytimesbits" />
