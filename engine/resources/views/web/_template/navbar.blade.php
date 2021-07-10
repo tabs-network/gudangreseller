@@ -1,5 +1,5 @@
 <div class="sticky-top shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
             </div>
         </div>
     </nav>
-    <div class="bg-navbar">
+    <div class="bg-dark">
         <div class="container pt-3 pb-3">
             <div class="d-flex justify-content-between">
                 <div class="col-2">

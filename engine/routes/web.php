@@ -21,7 +21,7 @@ use App\Http\Controllers\loginAdmin\loginAdminController;
 
 
 
-// Website Route
+// Website
 Route::get('/', [webHomeController::class, 'index'])->name('web.home.index');
 Route::get('product/', [webProductController::class, 'index'])->name('web.product.index');
 Route::get('product/{slug}/', [webProductController::class, 'show'])->name('web.product.show');
@@ -39,7 +39,7 @@ Route::middleware('auth:admin')->group(function () {
 
     // Product
     Route::resource('admin/product', admProductController::class)->names('admin.product');
-    Route::post('admin/product/add-size/{id}', 'App\Http\Controllers\admin\admProductController@addSize')->name('admin.product.addSize');
+    Route::post('admin/product/add-size/{id}', [admProductController::class, 'addSize'])->name('admin.product.addSize');
     Route::get('admin/product/t/search', [admProductController::class, 'search'])->name('admin.product.search');
 
     Route::resource('admin/product-category', admProductCatController::class)->names('admin.productCat');
@@ -49,11 +49,11 @@ Route::middleware('auth:admin')->group(function () {
 
     // Order
     Route::resource('admin/order', admOrderController::class)->names('admin.order');
-    Route::get('admin/order/t/new-order', 'App\Http\Controllers\admin\admOrderController@indexNewOrder')->name('admin.order.indexNewOrder');
+    Route::get('admin/order/t/new-order', [admOrderController::class, 'indexNewOrder'])->name('admin.order.indexNewOrder');
     Route::get('admin/order/{id}/show-add-cart', [admOrderController::class, 'showAddCart'])->name('admin.order.showAddCart');
     Route::get('admin/order/t/checkout', [admOrderController::class, 'checkout'])->name('admin.order.checkout');
 
     // Cart
-    Route::post('admin/product/product-cart/{id}/add', 'App\Http\Controllers\admin\admCartController@cart_store')->name('admin.cart.store');
-    Route::get('admin/product/product-cart/destroy', 'App\Http\Controllers\admin\admCartController@cart_destroy')->name('admin.cart.destroy');
+    Route::post('admin/product/product-cart/{id}/add', [admCartController::class, 'cart_store'])->name('admin.cart.store');
+    Route::get('admin/product/product-cart/destroy', [admCartController::class, 'cart_destroy'])->name('admin.cart.destroy');
 });

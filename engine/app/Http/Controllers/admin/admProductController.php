@@ -77,6 +77,7 @@ class admProductController extends Controller
 
         $product = new Product;
         $product->product_cover = $sku.'.'.$ext;
+        
         $product->product_name = $request->product_name;
         $product->product_cat_id = $request->product_cat_id;
         $product->product_gender_id = $request->product_gender_id;

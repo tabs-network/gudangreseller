@@ -26,7 +26,7 @@ tempora, ipsa minima, .')
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-3 mb-3">
-                @include('web._template.productCategory')
+                @include('web.product._template.category')
             </div>
             <div class="col-12 col-lg-9">
                 <h1 class="h5 line">Produk Gudang Reseller</h1>
