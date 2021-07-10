@@ -158,7 +158,7 @@ minima, .')
                             alt="{{$v->product_name}}" width="100%">
                         <div class="p-3">
                             <h3 class="h6 fw-light">{{$v->product_name}}</h3>
-                            <p class="h4">Rp.{{number_format($v->product_price)}}</p>
+                            <!-- <p class="h4">Rp.{{number_format($v->product_price)}}</p> -->
                         </div>
                     </a>
                 </div>
