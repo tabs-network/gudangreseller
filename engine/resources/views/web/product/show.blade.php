@@ -154,7 +154,7 @@ minima, .')
             <div class="d-flex col-6 col-md-3 col-lg-3">
                 <div class="mb-4 shadow-sm">
                     <a href="{{route('web.product.show', $v->product_slug)}}" class="txt-decoration-none">
-                        <img src="{{url('engine/storage/app/product/500x500/'.$v->product_cover)}}"
+                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}"
                             alt="{{$v->product_name}}" width="100%">
                         <div class="p-3">
                             <h3 class="h6 fw-light">{{$v->product_name}}</h3>
