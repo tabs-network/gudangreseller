@@ -168,7 +168,6 @@ return [
         Jenssegers\Agent\AgentServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        Shetabit\Visitor\Provider\VisitorServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -234,7 +233,6 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-        'Visitor' => Shetabit\Visitor\Facade\Visitor::class,
     ],
 
 ];
