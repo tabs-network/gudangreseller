@@ -12,19 +12,9 @@ class webProductController extends Controller
 {
     public function index()
     {
-        $agent = new Agent;
-        if($agent->isMobile()){
-            return 'tampilan mobile';
-        }
-        elseif($agent->isTablet()){
-            return view('web.product.index');
-        }
-        else
-        {
-            $product = Product::paginate(9);
-            $product_cat = ProductCat::get();
-            return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
-        }
+        $product = Product::paginate(9);
+        $product_cat = ProductCat::get();
+        return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
     }
 
     public function create()
