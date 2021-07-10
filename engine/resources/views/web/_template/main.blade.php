@@ -15,7 +15,7 @@
     <meta property="og:description" content="@yield('mtDesc')" />
     <meta property="og:image" content="@yield('mtImg')" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@nytimesbits" />
     <meta name="twitter:creator" content="@nickbilton" />
     <meta name="twitter:title" content="@yield('mtTitle')" />
