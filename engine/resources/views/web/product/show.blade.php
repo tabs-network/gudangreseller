@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="text-end">
-                    <button type="button" class="btn btn-lg btn-success ps-5 pe-5">
+                    <button type="button" class="btn btn-lg btn-success shadow-none ps-5 pe-5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-whatsapp mb-1" viewBox="0 0 16 16">
                             <path
@@ -155,8 +155,9 @@
                         <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}"
                             alt="{{$v->product_name}}" width="100%">
                         <div class="p-3">
-                            <h3 class="h6 fw-light">{{$v->product_name}}</h3>
-                            <!-- <p class="h4">Rp.{{number_format($v->product_price)}}</p> -->
+                            <h3 class="fs-6">{{$v->product_name}}</h3>
+                            <p class="fs-6">SKU : {{$v->product_sku}}</p>
+                            <p class="fs-4">Rp{{number_format($v->product_price, 0,",",".")}}</p>
                         </div>
                     </a>
                 </div>

@@ -14,13 +14,13 @@ ipsa minima, .')
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{url('assets/website/img/slider-1.jpg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.jpg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.jpg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -39,7 +39,8 @@ ipsa minima, .')
                 <img src="{{url('assets/website/img/gr-logo-2.png')}}" alt="" width="100%">
             </div>
             <div class="col-12 col-md-7">
-                <h1 class="h3 line mb-4">Gudang Reseller</h1>
+                <h1 class="h3">Gudang Reseller</h1>
+                <h2 class="h6 mb-3">Wadah Reseller dan Drpshiper untuk menjual tas selempang, sepatu sneaker, jersey dan kaos</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id beatae est in, earum, reprehenderit dolorum dicta unde minima repellat ipsam non neque? Fugiat nesciunt, maxime expedita illo, provident dolorum.
                 </p>
             </div>
@@ -113,9 +114,9 @@ ipsa minima, .')
                 @foreach($product as $v)
                 <div class="col-6 col-md-3 mb-3 d-flex">
                     <div class="bg-2 shadow-sm">
-                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpak Murah" width="100%">
+                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" width="100%">
                         <div class="p-3">
-                            <h3 class="h6 pt-4 pb-4">{{$v->product_name}}</h3>
+                            <h3 class="h6 pb-4">{{$v->product_name}}</h3>
                             <p class="h4">Rp.{{number_format($v->product_price)}}</p>
                         </div>
                     </div>

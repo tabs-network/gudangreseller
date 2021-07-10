@@ -43,8 +43,9 @@ tempora, ipsa minima, .')
                                     loading="lazy" title="asdadad" width="100%" height="auto"
                                     alt="{{ $v->product_name }}">
                                 <div class="p-3">
-                                    <h3 class="h6"><span>{{$v->product_name}}</span></h3>
-                                    <div class="fw-light h5">Rp.{{ number_format($v->product_price) }}</div>
+                                    <h3 class="fs-6"><span>{{$v->product_name}}</span></h3>
+                                    <p class="fs-6">SKU : {{$v->product_sku}}</p>
+                                    <p class="fs-5">Rp.{{ number_format($v->product_price) }}</p>
                                 </div>
                             </a>
                         </div>
