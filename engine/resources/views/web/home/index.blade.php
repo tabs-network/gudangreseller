@@ -35,8 +35,8 @@ ipsa minima, .')
 <div class="section-dark text-light pt-5 pb-5 mb-3">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5 ps-5 pe-5 text-center">
-                <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="" height="250">
+            <div class="col-12 col-md-5 text-center">
+                <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="200" height="200">
             </div>
             <div class="col-12 col-md-7">
                 <h1 class="h3">Gudang Reseller</h1>
@@ -55,13 +55,13 @@ ipsa minima, .')
             <div class="d-flex row mt-3 ">
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm text-center">
-                        <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="100%" class="p-4">
+                        <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="250" height="250" class="img-fluid p-3">
                         <h3 class="h6 pt-4 pb-4">Tas Backpack</h3>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-4">
+                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Tas Selempang</h3>
                         </div>
@@ -69,7 +69,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-1">
+                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Esport</h3>
                         </div>
@@ -77,7 +77,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="100%">
+                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Bola</h3>
                         </div>
@@ -85,7 +85,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
+                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Kaos</h3>
                         </div>
@@ -93,7 +93,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
+                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Sepatu Sneakers</h3>
                         </div>
@@ -113,7 +113,7 @@ ipsa minima, .')
                 <div class="col-6 col-md-3 mb-3 d-flex">
                     <div class="bg-2 shadow-sm">
                         <a href="#">
-                            <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" width="100%">
+                            <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" class="img-fluid" width="300" height="300" class="img-fluid p-4">
                             <div class="p-3">
                                 <h3 class="h6 pb-4">{{$v->product_name}}</h3>
                                 <p class="h4">Rp.{{number_format($v->product_price)}}</p>
