@@ -12,7 +12,7 @@ class webHomeController extends Controller
     public function index()
     {
         $agent = new Agent();
-        
+
         if($agent->isMobile()){
             $product = Product::inRandomOrder()->take(8)->get();
             return view('mobile.home.index', ['product' => $product]);
