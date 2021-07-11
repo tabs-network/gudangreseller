@@ -14,13 +14,13 @@ ipsa minima, .')
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/test.svg')}}" class="d-block w-100" alt="..." height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
