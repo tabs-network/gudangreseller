@@ -6,7 +6,7 @@ ipsa minima, .')
 @section('title', 'Reseller dan Dropshiper Termurah')
 
 @section('content')
-<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -32,7 +32,7 @@ ipsa minima, .')
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="section-dark text-light pt-5 pb-5 mb-3">
+<!-- <div class="section-dark text-light pt-5 pb-5 mb-3">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-5 text-center">
