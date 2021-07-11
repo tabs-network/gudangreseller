@@ -61,7 +61,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" name="key" placeholder="Produk/SKU">
                             <div class="input-group-prepend">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary shadow-none">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>

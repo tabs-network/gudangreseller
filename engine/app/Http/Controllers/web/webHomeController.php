@@ -4,14 +4,24 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 
 use App\Models\Product;
 class webHomeController extends Controller
 {
     public function index()
     {
-        $product = Product::inRandomOrder()->take(8)->get();
-        return view('web.home.index', ['product' => $product]);
+        $agent = new Agent();
+        
+        if($agent->isMobile()){
+            $product = Product::inRandomOrder()->take(8)->get();
+            return view('mobile.home.index', ['product' => $product]);
+        }
+        else 
+        {
+            $product = Product::inRandomOrder()->take(8)->get();
+            return view('web.home.index', ['product' => $product]);
+        }
     }
 
     public function create()
