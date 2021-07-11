@@ -165,7 +165,7 @@
                 <div class="col-6 col-md-3 mb-3 d-flex">
                     <div class="bg-2 shadow-sm">
                         <a href="#">
-                            <img src="{{url('engine/storage/app/product/150x150/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" class="img-fluid" width="300" height="300" class="img-fluid p-4">
+                            <img src="{{url('engine/storage/app/product/150x150/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" class="img-fluid" width="150" height="150" class="img-fluid p-4">
                             <div class="p-3">
                                 <h3 class="h6 pb-4">{{$v->product_name}}</h3>
                                 <p class="h4">Rp.{{number_format($v->product_price)}}</p>
