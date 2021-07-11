@@ -32,11 +32,11 @@ ipsa minima, .')
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="section-dark text-light pt-5 pb-5 cl-2">
+<div class="section-dark text-light pt-5 pb-5 mb-3">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5 ps-5 pe-5">
-                <img src="{{url('assets/website/img/gr-logo-2.png')}}" alt="" width="100%">
+            <div class="col-12 col-md-5 ps-5 pe-5 text-center">
+                <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="" height="250">
             </div>
             <div class="col-12 col-md-7">
                 <h1 class="h3">Gudang Reseller</h1>
@@ -48,54 +48,52 @@ ipsa minima, .')
     </div>
 </div>
 
-<div class="section-light pt-5 pb-5">
+<div class="section-light mb-3">
     <div class="container">
-        <div class="p-5 rounded-3 shadow-sm">
+        <div class="p-3 rounded-3 shadow-sm">
             <span class="h3">KATEGORI PILIHAN</span>
-            <div class="row mt-5">
-                <div class="col-6 col-md-2 mb-3">
-                    <div class="bg-2 shadow-sm">
-                        <img src="{{url('assets/website/img/backpack.png')}}" alt="Jual tas Backpak Murah" width="100%" class="p-3">
-                        <div class="text-center">
-                            <h3 class="h6 pt-4 pb-4">Tas Backpack</h3>
-                        </div>
+            <div class="d-flex row mt-3 ">
+                <div class="col-6 col-md-2">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="100%" class="p-4">
+                        <h3 class="h6 pt-4 pb-4">Tas Backpack</h3>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="bg-2 rounded-3 shadow-sm">
-                        <img src="{{url('assets/website/img/sling-bag.png')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
+                    <div class="shadow-sm">
+                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-4">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Tas Selempang</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="bg-2 shadow-sm">
-                        <img src="{{url('assets/website/img/jersey-esport.png')}}" alt="Jual Tas Selempang Murah" width="100%">
+                    <div class="shadow-sm">
+                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-1">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Esport</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="bg-2 shadow-sm">
-                        <img src="{{url('assets/website/img/jersey-bola.png')}}" alt="Jual Tas Selempang Murah" width="100%">
+                    <div class="shadow-sm">
+                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="100%">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Bola</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="bg-2 shadow-sm">
-                        <img src="{{url('assets/website/img/kaos-2.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
+                    <div class="shadow-sm">
+                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Kaos</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="bg-2 shadow-sm">
-                        <img src="{{url('assets/website/img/shoes.png')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
+                    <div class="shadow-sm">
+                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="100%" class="p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Sepatu Sneakers</h3>
                         </div>
@@ -106,19 +104,21 @@ ipsa minima, .')
     </div>
 </div>
 
-<div class="section-light pb-5">
+<div class="section-light mb-3">
     <div class="container">
-        <div class="p-5 rounded-3 shadow-sm">
+        <div class="p-3 rounded-3 shadow-sm">
             <span class="h3">PRODUK</span>
-            <div class="row mt-5">
+            <div class="row">
                 @foreach($product as $v)
                 <div class="col-6 col-md-3 mb-3 d-flex">
                     <div class="bg-2 shadow-sm">
-                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" width="100%">
-                        <div class="p-3">
-                            <h3 class="h6 pb-4">{{$v->product_name}}</h3>
-                            <p class="h4">Rp.{{number_format($v->product_price)}}</p>
-                        </div>
+                        <a href="#">
+                            <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual tas Backpack Murah" width="100%">
+                            <div class="p-3">
+                                <h3 class="h6 pb-4">{{$v->product_name}}</h3>
+                                <p class="h4">Rp.{{number_format($v->product_price)}}</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 @endforeach

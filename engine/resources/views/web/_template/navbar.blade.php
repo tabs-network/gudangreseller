@@ -36,10 +36,10 @@
     <div class="bg-dark">
         <div class="container pt-3 pb-3">
             <div class="d-flex justify-content-between">
-                <div class="col-2">
-                    <img src="{{url('assets/website/img/gr-logo-1.png')}}" alt="" height="43">
+                <div class="col-2 d-none d-sm-none d-md-none d-lg-block text-center">
+                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" height="45">
                 </div>
-                <div class="col-10">
+                <div class="col">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
                     </form>
@@ -48,3 +48,4 @@
         </div>
     </div>
 </div>
+
