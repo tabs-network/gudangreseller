@@ -37,7 +37,7 @@
         <div class="container pt-3 pb-3">
             <div class="d-flex justify-content-between">
                 <div class="col-2 d-none d-sm-none d-md-none d-lg-block text-center">
-                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" height="45">
+                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
                 </div>
                 <div class="col">
                     <form class="d-flex">

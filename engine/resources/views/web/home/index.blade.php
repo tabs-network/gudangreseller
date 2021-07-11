@@ -61,7 +61,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
+                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Tas Selempang</h3>
                         </div>
@@ -69,7 +69,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
+                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Esport</h3>
                         </div>
@@ -77,7 +77,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
+                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Jersey Bola</h3>
                         </div>
@@ -85,7 +85,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
+                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Kaos</h3>
                         </div>
@@ -93,7 +93,7 @@ ipsa minima, .')
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="shadow-sm">
-                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-4">
+                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
                         <div class="text-center">
                             <h3 class="h6 pt-4 pb-4">Sepatu Sneakers</h3>
                         </div>
