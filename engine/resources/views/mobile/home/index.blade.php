@@ -60,7 +60,7 @@ ipsa minima, .')
     </div>
 </div>
 
-<!-- <div class="section-light mb-3">
+<div class="section-light mb-3">
     <div class="container">
         <div class="p-3 rounded-3 shadow-sm">
             <span class="fs-6">KATEGORI PILIHAN</span>
@@ -110,7 +110,7 @@ ipsa minima, .')
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="section-light mb-3">
     <div class="container">

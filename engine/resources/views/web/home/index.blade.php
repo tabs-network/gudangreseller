@@ -16,12 +16,6 @@ ipsa minima, .')
         <div class="carousel-item active">
             <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
-        <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
-        </div>
-        <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
-        </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,7 +26,7 @@ ipsa minima, .')
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<!-- <div class="section-dark text-light pt-5 pb-5 mb-3">
+<div class="section-dark text-light pt-5 pb-5 mb-3">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-5 text-center">
@@ -102,7 +96,7 @@ ipsa minima, .')
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="section-light mb-3">
     <div class="container">
