@@ -8,7 +8,7 @@ ipsa minima, .')
 @section('title', 'Reseller dan Dropshiper Termurah')
 
 @section('content')
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
@@ -19,16 +19,13 @@ ipsa minima, .')
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." width="100"
-                height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%" width="100">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." width="100"
-                height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
         <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." width="100"
-                height="100%">
+            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -41,7 +38,7 @@ ipsa minima, .')
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> -->
 
 <div class="section-dark text-light pt-3 pb-3 mb-3">
     <div class="container">
@@ -63,7 +60,7 @@ ipsa minima, .')
     </div>
 </div>
 
-<div class="section-light mb-3">
+<!-- <div class="section-light mb-3">
     <div class="container">
         <div class="p-3 rounded-3 shadow-sm">
             <span class="fs-6">KATEGORI PILIHAN</span>
@@ -113,7 +110,7 @@ ipsa minima, .')
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="section-light mb-3">
     <div class="container">
