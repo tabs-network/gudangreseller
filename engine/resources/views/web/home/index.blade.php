@@ -7,74 +7,73 @@ ipsa minima, .')
 
 @section('content')
 <main>
-<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Reseller dan Dropship" height="100%">
-
-<section class="section-dark">
+<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Reseller dan Dropship" height="auto">
+<section class="bg-dark text-light pt-5 pb-5">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-5 text-center">
                 <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="200" height="200">
             </div>
             <div class="col-12 col-md-7">
-                <h1 class="h3">Gudang Reseller</h1>
-                <h2 class="h6">Wadah Reseller dan Drpshiper untuk menjual tas selempang, sepatu sneaker, jersey dan kaos</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id beatae est in, earum, reprehenderit dolorum dicta unde minima repellat ipsam non neque? Fugiat nesciunt, maxime expedita illo, provident dolorum.
+                <h1 class="fs-4">GUDANG RESELLER</h1>
+                <h2 class="fs-5 fw-light">Wadah Reseller dan Drpshiper untuk menjual tas selempang, sepatu sneaker, jersey dan kaos</h2>
+                <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id beatae est in, earum, reprehenderit dolorum dicta unde minima repellat ipsam non neque? Fugiat nesciunt, maxime expedita illo, provident dolorum.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section-test container">
-    <div class="box shadow-sm">
+<section class="section-light container mt-5 mb-5">
+    <div class="bg-light rounded-5 shadow-sm p-3">
         <h4 class="fs-4">KATEGORI PILIHAN</h4>
         <p class="fs-5 fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</p>
         <div class="d-flex row mt-4">
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'tas-backpack-pria')}}">
-                    <div class="shadow-sm text-center">
+                    <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Tas Backpack</h4>
+                        <h4 class="fs-6">Tas Backpack</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'tas-selempang-pria')}}">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Tas Selempang</h4>
+                        <h4 class="fs-6">Tas Selempang</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'jersey-esport')}}">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Jersey Esport</h4>
+                        <h4 class="fs-6">Jersey Esport</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'jersey-bola')}}">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Jersey Bola</h4>
+                        <h4 class="fs-6">Jersey Bola</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'kaos')}}">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Kaos</h4>
+                        <h4 class="fs-6">Kaos</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'sneakers-pria')}}">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
-                        <h4 class="fs-6 pb-3">Sepatu Sneakers</h4>
+                        <h4 class="fs-6">Sepatu Sneakers</h4>
                     </div>
                 </a>
             </div>
@@ -82,69 +81,10 @@ ipsa minima, .')
     </div>
 </section>
 
-
-<section class="section-light">
-    <div class="container rounded-5 shadow-sm">
-            <h4 class="fs-3">KATEGORI PILIHAN</h4>
-            <p class="fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit autem numquam eum? At sit itaque eaque nam laudantium tempora ad.</p>
-            <div class="d-flex row mt-4">
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'tas-backpack-pria')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Tas Backpack</h4>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'tas-selempang-pria')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Tas Selempang</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'jersey-esport')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Jersey Esport</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'jersey-bola')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Jersey Bola</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'kaos')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Kaos</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-2">
-                    <a href="{{route('web.productCat.show', 'sepatu-sneakers-pria')}}">
-                        <div class="shadow-sm text-center">
-                            <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual Tas Selempang Murah" width="250" height="250" class="img-fluid p-3">
-                            <h4 class="h6 pt-4 pb-4">Sepatu Sneakers</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-    </div>
-</section>
-
-<section class="section-light">
-    <div class="container rounded-3 shadow-sm">
-        <h4 class="h3">PRODUK</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, tempore? Maxime numquam quia quasi ipsum?</p>
+<section class="section-light container mb-5">
+    <div class="box rounded-3 shadow-sm">
+        <h4 class="fs-4">PRODUK</h4>
+        <p class="fs-5 fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</p>
         <div class="row">
             @foreach($product as $v)
             <div class="col-6 col-md-3 mb-3 d-flex">
