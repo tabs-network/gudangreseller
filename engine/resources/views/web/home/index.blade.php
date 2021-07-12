@@ -25,6 +25,64 @@ ipsa minima, .')
     </div>
 </section>
 
+<section class="section-test container">
+    <div class="box shadow-sm">
+        <h4 class="fs-4">KATEGORI PILIHAN</h4>
+        <p class="fs-5 fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</p>
+        <div class="d-flex row mt-4">
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'tas-backpack-pria')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Tas Backpack</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'tas-selempang-pria')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Tas Selempang</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'jersey-esport')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Jersey Esport</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'jersey-bola')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Jersey Bola</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'kaos')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Kaos</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 mb-3">
+                <a href="{{route('web.productCat.show', 'sneakers-pria')}}">
+                    <div class="shadow-sm text-center">
+                        <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
+                        <h4 class="fs-6 pb-3">Sepatu Sneakers</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="section-light">
     <div class="container rounded-5 shadow-sm">
             <h4 class="fs-3">KATEGORI PILIHAN</h4>
