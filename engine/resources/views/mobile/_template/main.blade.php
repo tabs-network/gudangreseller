@@ -28,17 +28,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
+    <style>
+        .loader {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #222222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .loader > img {
+            width: 100px;
+        }
+
+        .loader.hidden {
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .thumb {
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
     <title>Gudang Reseller - @yield('title')</title>
 </head>
 
 <body>
+    <div class="loader">
+        <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." />
+    </div>
     @include('mobile._template.navHeader')
 
     @include('mobile._template.navFooter')
     
     @yield('content')
-
+    
+   
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -47,6 +86,13 @@
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.className += " hidden"; // class "loader hidden"
+        });
+    </script>
     @yield('js')
 </body>
 

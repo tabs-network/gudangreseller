@@ -12,10 +12,26 @@ tempora, ipsa minima, .')
         <div class="p-3 bg-light-1 rounded-3 shadow-sm">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="{{ route('web.home.index') }}"
-                            class="txt-decoration-none"><span>Home</span></a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('web.product.index')}}"
-                            class="txt-decoration-none"><span>Produk</span></a></li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('web.home.index') }}" class="txt-decoration-none">
+                            <span>Home</span>   
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="{{route('web.product.index')}}" class="txt-decoration-none">
+                            <span>Produk</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="txt-decoration-none">
+                            <span>Category</span>   
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('web.productCat.show', $productCatGet->product_cat_slug) }}" class="txt-decoration-none">
+                            <span>{{$productCatGet->product_cat_name}}</span>   
+                        </a>
+                    </li>
                 </ol>
             </nav>
         </div>

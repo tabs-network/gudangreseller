@@ -11,15 +11,15 @@ class webHomeController extends Controller
 {
     public function index()
     {
+        $product = Product::inRandomOrder()->take(8)->get();
         $agent = new Agent();
 
-        if($agent->isMobile()){
-            $product = Product::inRandomOrder()->take(8)->get();
+        if($agent->isMobile())
+        {
             return view('mobile.home.index', ['product' => $product]);
         }
         else 
         {
-            $product = Product::inRandomOrder()->take(8)->get();
             return view('web.home.index', ['product' => $product]);
         }
     }

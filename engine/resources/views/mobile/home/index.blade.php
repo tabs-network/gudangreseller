@@ -8,54 +8,20 @@ ipsa minima, .')
 @section('title', 'Reseller dan Dropshiper Termurah')
 
 @section('content')
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%" width="100">
-        </div>
-        <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
-        </div>
-        <div class="carousel-item">
-            <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="..." height="100%">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Dropshipe dan Reseller Sepatu Sneakers murah" height="100%" width="100">
 
 <div class="section-dark text-light pt-3 pb-3 mb-3">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-5 text-center mb-3">
-                <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="50"
-                    height="50">
+            <div class="text-center mb-3">
+                <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="50" height="50">
             </div>
-            <div class="col-12 col-md-7">
-                <h1 class="fs-6">Gudang Reseller</h1>
-                <h2 class="fw-light mb-3" style="font-size:12px">Wadah Reseller dan Drpshiper untuk menjual tas
-                    selempang, sepatu sneaker, jersey dan kaos</h2>
-                <p class="fw-light" style="font-size:12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ratione id beatae est in, earum, reprehenderit dolorum dicta unde minima repellat ipsam non neque?
-                    Fugiat nesciunt, maxime expedita illo, provident dolorum.
-                </p>
-            </div>
+            <h1 class="fs-6">Gudang Reseller</h1>
+            <h2 class="fw-light mb-3" style="font-size:12px">Wadah Reseller dan Drpshiper untuk menjual tas
+                selempang, sepatu sneaker, jersey dan kaos</h2>
+            <p class="fw-light" style="font-size:12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Ratione id beatae est in, earum, reprehenderit dolorum dicta unde minima repellat ipsam non neque?
+                Fugiat nesciunt, maxime expedita illo, provident dolorum.
+            </p>
         </div>
     </div>
 </div>
@@ -64,7 +30,7 @@ ipsa minima, .')
     <div class="container">
         <div class="p-3 rounded-3 shadow-sm">
             <span class="fs-6">KATEGORI PILIHAN</span>
-            <div class="d-flex row mt-3 ">
+            <div class="d-flex row mt-3">
                 <div class="col-4">
                     <div class="shadow-sm text-center">
                         <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}"
@@ -116,10 +82,10 @@ ipsa minima, .')
     <div class="container">
         <div class="p-2 rounded-3 shadow-sm">
             <span class="fs-6">PRODUK</span>
-            <div class="row">
+            <div class="row mt-3">
                 @foreach($product as $v)
-                <div class="col-6 col-md-3 mb-3 d-flex">
-                    <div class="bg-2 shadow-sm">
+                <div class="col-6 d-flex mb-3">
+                    <div class="shadow-sm">
                         <a href="#">
                             <img src="{{url('engine/storage/app/product/150x150/'.$v->product_cover)}}"
                                 alt="Jual tas Backpack Murah" class="img-fluid" width="150" height="150"

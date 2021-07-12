@@ -1,5 +1,5 @@
-<div class="sticky-top shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <ion-icon name="logo-whatsapp" size="small" style="color:white;"></ion-icon>
+                    <ion-icon name="logo-whatsapp" size="large" style="color:white;"></ion-icon>
                     <ion-icon name="logo-facebook" size="large" style="color:white;" class="ms-1"></ion-icon>
                     <ion-icon name="logo-twitter" size="large" style="color:white;" class="ms-1"></ion-icon>
                     <ion-icon name="logo-instagram" size="large" style="color:white;" class="ms-1"></ion-icon>
@@ -33,19 +33,17 @@
             </div>
         </div>
     </nav>
-    <div class="bg-dark">
-        <div class="container pt-3 pb-3">
-            <div class="d-flex justify-content-between">
-                <div class="col-2 d-none d-sm-none d-md-none d-lg-block text-center">
-                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
-                </div>
-                <div class="col">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
-                    </form>
-                </div>
+    <div class="container pt-3 pb-3">
+        <div class="d-flex justify-content-between">
+            <div class="col-2 d-none d-sm-none d-md-none d-lg-block text-center">
+                <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
+            </div>
+            <div class="col">
+                <form class="d-flex">
+                    <input class="form-control me-2 shadow-none" type="search" placeholder="Cari Produk" aria-label="Search">
+                </form>
             </div>
         </div>
     </div>
-</div>
+</header>
 

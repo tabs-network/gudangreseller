@@ -7,23 +7,21 @@ tempora, ipsa minima, .')
 @section('title', 'Jual Produk Reseller Termurah')
 
 @section('content')
-<div class="section-light mt-3 mb-3">
-    <div class="container">
-        <div class="p-3 bg-light-1 rounded-3 shadow-sm">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="{{ route('web.home.index') }}"
-                            class="txt-decoration-none"><span>Home</span></a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('web.product.index')}}"
-                            class="txt-decoration-none"><span>Produk</span></a></li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-</div>
+<main>
 
-<div class="section-light mt-3 mb-3">
-    <div class="container">
+<section class="section-light mt-3">
+    <div class="container rounded-3 shadow-sm">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="{{ route('web.home.index') }}"><span>Home</span></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="{{route('web.product.index')}}"><span>Produk</span></a></li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="section-light">
+    <div class="container rounded-3 shadow-sm">
         <div class="row">
             <div class="col-12 col-lg-3 mb-3">
                 @include('web.product._template.category')
@@ -58,5 +56,7 @@ tempora, ipsa minima, .')
             </div>
         </div>
     </div>
-</div>
+</section>
+
+</main>
 @endsection

@@ -1,8 +1,10 @@
+<footer>
 <div class="bg-dark text-light pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam provident qui sapiente consectetur. Velit id laboriosam eligendi! Eum, mollitia quo illum corporis alias ipsum nisi? Dignissimos odit laborum, itaque mollitia!
+                <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" width="150">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus blanditiis autem commodi! Animi unde excepturi assumenda nihil eveniet quam nisi fugit tempora perferendis sapiente perspiciatis autem illum cupiditate doloribus quis laboriosam quas debitis a quidem possimus, veritatis asperiores praesentium? Blanditiis officia pariatur error hic consequuntur recusandae eos esse voluptatem.</p>
                 <hr>
                 <div class="d-flex mt-3">
                     <ion-icon name="logo-whatsapp" size="large" style="color:white;"></ion-icon>
@@ -22,3 +24,4 @@
         </div>
     </div>
 </div>
+</footer>

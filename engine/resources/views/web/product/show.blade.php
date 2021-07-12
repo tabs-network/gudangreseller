@@ -93,15 +93,15 @@
                         <table class="table cl-dark-2">
                             <tbody>
                                 <tr>
-                                    <th style="width:200px;">Kategori</th>
+                                    <th width="100">Kategori</th>
                                     <td>: {{$product->product_cat->product_cat_name}}</td>
                                 </tr>
                                 <tr>
-                                    <th style="width:200px;">Genre</th>
+                                    <th>Genre</th>
                                     <td>: {{$product->product_gender->product_gender_name}}</td>
                                 </tr>
                                 <tr>
-                                    <th style="width:200px;">Kode SKU</th>
+                                    <th>Kode SKU</th>
                                     <td>: {{$product->product_sku}}</td>
                                 </tr>
                             </tbody>

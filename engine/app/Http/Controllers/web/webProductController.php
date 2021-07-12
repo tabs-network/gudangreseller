@@ -14,7 +14,17 @@ class webProductController extends Controller
     {
         $product = Product::paginate(9);
         $product_cat = ProductCat::get();
-        return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
+
+        $agent = new Agent;
+        if($agent->isMobile())
+        {
+            return view('mobile.product.index', ['product' => $product, 'product_cat' => $product_cat]);
+        }
+        else 
+        {
+            return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
+        }
+        
     }
 
     public function create()

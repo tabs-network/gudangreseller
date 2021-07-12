@@ -43,6 +43,22 @@ class ProductCatSeeder extends Seeder
                 'product_cat_mt_title' => 'Kaos',
                 'product_cat_mt_desc'  => 'Kaos',
             ],
+            [
+                'product_cat_id' => '5',
+                'product_cat_name' => 'Jersey Bola',
+                'product_cat_slug' => 'jersey-bola',
+                'product_cat_desc' => 'Tentang Jersey Bola',
+                'product_cat_mt_title' => 'Jersey Bola',
+                'product_cat_mt_desc'  => 'Jersey Bola',
+            ],
+            [
+                'product_cat_id' => '6',
+                'product_cat_name' => 'Jersey Esport',
+                'product_cat_slug' => 'jersey-esport',
+                'product_cat_desc' => 'Tentang Jersey esport',
+                'product_cat_mt_title' => 'Jersey Esport',
+                'product_cat_mt_desc'  => 'Jersey Esport',
+            ],
         );
 
         \DB::table('product_cat')->insert($data);
