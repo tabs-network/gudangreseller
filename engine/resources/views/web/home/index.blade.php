@@ -87,7 +87,7 @@ ipsa minima, .')
         <h5 class="fs-5 mb-4 fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</h5>
         <div class="row">
             @foreach($product as $v)
-            <div class="col-6 col-md-3 mb-4 d-flex">
+            <div class="col-6 col-md-3 mb-3 d-flex">
                 <div class="bg-light shadow-sm">
                     <a href="{{route('web.product.show',$v->product_slug)}}">
                         <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual {{$v->product_name}}" class="img-fluid" width="300" height="300" class="img-fluid ">

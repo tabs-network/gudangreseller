@@ -1,4 +1,4 @@
-<div class="bg-dark fixed-bottom">
+<div class="nav-footer-mobile bg-dark fixed-bottom">
     <div class="container-fluid">
             <div class="d-flex justify-content-evenly">
                 <div class="p-2 bd-highlight text-center">

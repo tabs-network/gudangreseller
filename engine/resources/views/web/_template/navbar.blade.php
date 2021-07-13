@@ -14,7 +14,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-shadow" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            KATEGORI
+                            Kategori
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -25,7 +25,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <ion-icon name="logo-whatsapp" size="large" style="color:white;"></ion-icon>
+                    <ion-icon name="logo-whatsapp" size="large" style="color:white;" class="ms-1"></ion-icon>
                     <ion-icon name="logo-facebook" size="large" style="color:white;" class="ms-1"></ion-icon>
                     <ion-icon name="logo-twitter" size="large" style="color:white;" class="ms-1"></ion-icon>
                     <ion-icon name="logo-instagram" size="large" style="color:white;" class="ms-1"></ion-icon>

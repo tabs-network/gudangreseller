@@ -23,47 +23,7 @@
     <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
     <meta name="theme-color" content="#4285f4">
     <!-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
-    <style>
-        .loader {
-            position: fixed;
-            z-index: 99;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #222222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loader > img {
-            width: 100px;
-        }
-
-        .loader.hidden {
-            animation: fadeOut 1s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeOut {
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        .thumb {
-            height: 100px;
-            border: 1px solid black;
-            margin: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{url('assets/website/css/style.css')}}">
     <title>Gudang Reseller - @yield('title')</title>
 </head>
 

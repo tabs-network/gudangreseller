@@ -33,7 +33,7 @@ tempora, ipsa minima, .')
             </div>
             <div class="row">
                 @foreach($product as $v)
-                <div class="d-flex col-6 col-md-6 col-lg-4 mb-3">
+                <div class="d-flex col-6 col-md-6 col-lg-3 mb-3">
                     <div class="bg-light shadow-sm">
                         <a href="{{route('web.product.show', $v->product_slug)}}" class="txt-decoration-none">
                             <img src="{{ url('engine/storage/app/product/300x300/'.$v->product_cover) }}"
