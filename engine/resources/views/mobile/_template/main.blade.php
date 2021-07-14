@@ -30,7 +30,7 @@
 
 <body>
     <div class="loader text-light">
-        <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." />
+        <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." class="img-fluid" width="500" height="500"/>
     </div>
 
     @include('mobile._template.navHeader')

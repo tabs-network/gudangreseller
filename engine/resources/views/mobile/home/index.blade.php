@@ -85,7 +85,7 @@ ipsa minima, .')
                 <div class="bg-light shadow-sm">
                     <a href="#">
                         <img src="{{url('engine/storage/app/product/150x150/'.$v->product_cover)}}"
-                            alt="Jual tas Backpack Murah" class="img-fluid" width="100%" height="100%"
+                            alt="Jual tas Backpack Murah" class="img-fluid" width="150" height="150"
                             class="img-fluid p-4">
                         <div class="p-2">
                             <h3 class="pb-4" style="font-size:12px">{{$v->product_name}}</h3>

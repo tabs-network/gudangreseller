@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8">
-                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" width="150">
+                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus blanditiis autem commodi!
                         Animi unde excepturi assumenda nihil eveniet quam nisi fugit tempora perferendis sapiente
                         perspiciatis autem illum cupiditate doloribus quis laboriosam quas debitis a quidem possimus,

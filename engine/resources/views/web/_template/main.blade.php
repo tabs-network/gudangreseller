@@ -43,7 +43,7 @@
     @include('web._template.footer')
     
     <div class="loader">
-        <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." width="500px"/>
+        <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." class="img-fluid" width="500" height="500"/>
     </div>
     
     <!-- Option 1: Bootstrap Bundle with Popper -->

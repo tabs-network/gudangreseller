@@ -7,12 +7,12 @@ ipsa minima, .')
 
 @section('content')
 <main>
-<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Reseller dan Dropship" height="auto">
+<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Reseller dan Dropship " height="500" width="1900">
 <section class="bg-dark text-light pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-5 text-center">
-                <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="200" height="200">
+                <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="Wadah Reseller dan Drpshiper untuk menjual tas selempang, sepatu sneaker, jersey dan kaos" width="200" height="200">
             </div>
             <div class="col-12 col-md-7">
                 <h1 class="fs-3 fw-light">GUDANG RESELLER</h1>
