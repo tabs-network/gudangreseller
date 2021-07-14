@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-\URL::forceScheme('https');
+
 // Admin Controller
 use App\Http\Controllers\admin\admCartController;
 use App\Http\Controllers\admin\admDashboardController;
