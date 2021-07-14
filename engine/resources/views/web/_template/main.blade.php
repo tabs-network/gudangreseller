@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#4285f4">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url('assets/website/css/style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
 
     <style>
         

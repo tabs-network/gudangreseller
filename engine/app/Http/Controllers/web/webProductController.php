@@ -43,7 +43,18 @@ class webProductController extends Controller
         $product_related = Product::where('product_cat_id', $product->product_cat_id)->take(8)->get();
         $product->product_count = $product->product_count + 1;
         $product->save();
-        return view('web.product.show', ['product' => $product, 'product_related' => $product_related]);
+
+        $agent = new Agent;
+        if($agent->isMobile())
+        {
+            return view('mobile.product.show', ['product' => $product, 'product_related' => $product_related]);
+        }
+        else
+        {
+            return view('web.product.show', ['product' => $product, 'product_related' => $product_related]);
+        }
+        
+        
     }
 
     public function edit($id)

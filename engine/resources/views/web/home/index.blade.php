@@ -24,20 +24,20 @@ ipsa minima, .')
     </div>
 </section>
 
-<section class="section-light container mt-5 mb-5">
-    <div class="bg-light rounded-3 shadow-sm pt-4 px-4">
+<section class="section-light container mt-4">
+    <div class="bg-light rounded-3 shadow-sm p-4">
         <h4 class="fs-3 fw-light">KATEGORI PILIHAN</h4>
-        <h5 class="fs-5 mb-4 fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</h5>
-        <div class="d-flex row">
-            <div class="col-6 col-md-2 mb-4">
+        <h5 class="fs-5 fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</h5>
+        <div class="d-flex row g-3">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'tas-backpack-pria')}}">
-                    <div class="bg-light shadow-sm text-center pb-3 rounded-3">
+                    <div class="bg-light shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-tas-backpack.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
                         <h4 class="fs-6">Tas Backpack</h4>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-4">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'tas-selempang-pria')}}">
                     <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-tas-selempang.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
@@ -45,7 +45,7 @@ ipsa minima, .')
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-4">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'jersey-esport')}}">
                     <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-jersey-esport.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
@@ -53,7 +53,7 @@ ipsa minima, .')
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-4">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'jersey-bola')}}">
                     <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-jersey-bola.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
@@ -61,7 +61,7 @@ ipsa minima, .')
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-4">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'kaos')}}">
                     <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-kaos.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
@@ -69,7 +69,7 @@ ipsa minima, .')
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-2 mb-4">
+            <div class="col-6 col-md-2">
                 <a href="{{route('web.productCat.show', 'sneakers-pria')}}">
                     <div class="shadow-sm text-center pb-3">
                         <img src="{{url('assets/website/img/logo-section-sneakers.svg')}}" alt="Jual tas Backpak Murah" width="150" height="150" class="img-fluid p-3">
@@ -82,15 +82,15 @@ ipsa minima, .')
 </section>
 
 <section class="section-light container my-5">
-    <div class="bg-light rounded-3 shadow-sm pt-4 px-4">
+    <div class="bg-light rounded-3 shadow-sm p-4">
         <h4 class="fs-3 fw-light">PRODUK</h4>
         <h5 class="fs-5 mb-4 fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quas!</h5>
         <div class="row">
             @foreach($product as $v)
-            <div class="col-6 col-md-3 mb-3 d-flex">
+            <div class="col-6 col-md-3 g-3 d-flex">
                 <div class="bg-light shadow-sm">
                     <a href="{{route('web.product.show',$v->product_slug)}}">
-                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual {{$v->product_name}}" class="img-fluid" width="300" height="300" class="img-fluid ">
+                        <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}" alt="Jual {{$v->product_name}}" class="img-fluid" width="500" height="500" class="img-fluid ">
                         <div class="p-3">
                             <h3 class="fs-6 fw-normal pb-4">{{$v['product_name']}}</h3>
                             <p class="fs-4">Rp.{{number_format($v->product_price)}}</p>

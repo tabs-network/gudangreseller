@@ -12,7 +12,7 @@ class admCartController extends Controller
 
     public function index()
     {
-        //
+        
     }
 
     public function create()

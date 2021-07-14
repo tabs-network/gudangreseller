@@ -15,7 +15,7 @@ tempora, ipsa minima, .')
             <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item"><a href="{{ route('web.home.index') }}"><span>Home</span></a></li>
                 <li class="breadcrumb-item" aria-current="page"><a href="{{route('web.product.index')}}"><span>Produk</span></a></li>
-                <li class="breadcrumb-item active"><a href="{{ route('web.productCat.show', $productCatGet->product_cat_name) }}"><span>{{$productCatGet->product_cat_name}}</span></a></li>
+                <li class="breadcrumb-item active"><a href="{{ route('web.productCat.show', $productCatGet->product_cat_slug) }}"><span>{{$productCatGet->product_cat_name}}</span></a></li>
             </ol>
         </nav>
     </div>

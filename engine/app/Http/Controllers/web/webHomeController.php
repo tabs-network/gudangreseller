@@ -14,9 +14,13 @@ class webHomeController extends Controller
         $product = Product::inRandomOrder()->take(8)->get();
         $agent = new Agent();
 
-        if($agent->isMobile())
+        if($agent->isPhone())
         {
             return view('mobile.home.index', ['product' => $product]);
+        }
+        if($agent->isTablet())
+        {
+            return view('web.home.index', ['product' => $product]);
         }
         else 
         {

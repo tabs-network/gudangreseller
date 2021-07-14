@@ -13,8 +13,21 @@ ipsa minima, .')
         <div class="py-3">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item" style="font-size:12px"><a href="{{ route('web.home.index') }}" class="txt-decoration-none"><span>Home</span></a></li>
-                    <li class="breadcrumb-item active" style="font-size:12px" aria-current="page"><a href="{{route('web.product.index')}}" class="txt-decoration-none"><span>Produk</span></a></li>
+                    <li class="breadcrumb-item" style="font-size:12px">
+                        <a href="{{ route('web.home.index') }}">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item" style="font-size:12px" aria-current="page">
+                        <a href="{{route('web.product.index')}}">
+                            <span>Produk</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" style="font-size:12px" aria-current="page">
+                        <a href="{{ route('web.productCat.show', $productCatGet->product_cat_slug) }}">
+                            <span>{{ $productCatGet->product_cat_name }}</span>
+                        </a>
+                    </li>
                 </ol>
             </nav>
         </div>

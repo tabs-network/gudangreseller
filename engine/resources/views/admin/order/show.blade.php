@@ -58,7 +58,9 @@
                         </tr>
                         <tr class="table-success">
                             <td colspan="4" class="text-right text-uppercase"><strong>Total Due:</strong></td>
-                            <td class="text-right"><strong>Rp.{{number_format($order->order_total_cost + $order->order_shipping_charges)}}</strong></td>
+                            <td class="text-right">
+                                <strong>Rp.{{number_format($order->order_total_cost + $order->order_shipping_charges)}}</strong>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

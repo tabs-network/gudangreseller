@@ -16,7 +16,7 @@
                         <a class="nav-link dropdown-toggle text-shadow" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             KATEGORI
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             @foreach(productCat_helpers() as $v)
                                 <li><a class="dropdown-item" href="{{route('web.productCat.show', $v->product_cat_slug)}}">{{$v->product_cat_name}}</a></li>
                             @endforeach
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col">
                     <form class="d-flex">
-                        <input class="form-control me-2 shadow-none" type="search" placeholder="Cari Produk" aria-label="Search">
+                        <input class="form-control" type="search" placeholder="Cari Produk" aria-label="Search">
                     </form>
                 </div>
             </div>

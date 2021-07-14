@@ -2,6 +2,7 @@
 <html lang="id" translate="no">
 
 <head>
+    <link rel="icon" type="image/svg+xml" href="{{url('favicon.svg')}}">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,26 +21,29 @@
     <meta name="twitter:creator" content="@nickbilton" />
     <meta name="twitter:title" content="@yield('mtTitle')" />
 
-    <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="{{url('favicon.svg')}}">
     <meta name="theme-color" content="#4285f4">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url('assets/website/css/style.css')}}">
+    <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
     <title>Gudang Reseller - @yield('title')</title>
 </head>
 
 <body>
-    <div class="loader">
+    <div class="loader text-light">
         <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." />
     </div>
+
     @include('mobile._template.navHeader')
 
     @include('mobile._template.navFooter')
-    
-    @yield('content')
-    
-   
 
+    <main>
+        @yield('content')
+    </main>
+    
+    @include('mobile._template.footer')
 
+    <div style="height:65px;"></div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
@@ -55,5 +59,4 @@
     </script>
     @yield('js')
 </body>
-
 </html>

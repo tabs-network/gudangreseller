@@ -6,7 +6,7 @@
 @section('title', $product->product_name)
 
 @section('content')
-<div class="section-light container my-3">
+<div class="section-light container my-4">
     <div class="bg-light shadow-sm p-3">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb m-0">
@@ -24,10 +24,10 @@
     </div>
 </div>
 
-<div class="container pt-3 mb-5">
-    <div class="bg-light shadow-sm p-4">
+<div class="container mb-5">
+    <div class="bg-light shadow-sm px-4 pt-4">
         <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-4">
                 <div class="shadow-sm">
                     <img src="{{url('engine/storage/app/product/500x500/'.$product->product_cover)}}"
                         class="card-img-top" alt="...">
@@ -142,16 +142,16 @@
     </div>
 </div>
 
-<div class="section-light mb-5">
+<div class="section-light mb-4">
     <div class="container">
-        <h3 class="h3 mb-4">{{$product->product_cat->product_cat_name}} Lainnya</h3>
+        <h3 class="h3">{{$product->product_cat->product_cat_name}} Lainnya</h3>
         <div class="row">
             @foreach($product_related as $v)
-            <div class="d-flex col-6 col-md-3 col-lg-3">
-                <div class="bg-light mb-4 shadow-sm">
+            <div class="d-flex col-6 col-md-3 col-lg-3 g-4">
+                <div class="bg-light shadow-sm">
                     <a href="{{route('web.product.show', $v->product_slug)}}" class="txt-decoration-none">
                         <img src="{{url('engine/storage/app/product/300x300/'.$v->product_cover)}}"
-                            alt="{{$v->product_name}}" width="100%">
+                            alt="{{$v->product_name}}" class="img-fluid" width="500" height="500">
                         <div class="p-3">
                             <h3 class="fs-6">{{$v->product_name}}</h3>
                             <p class="fs-6">SKU : {{$v->product_sku}}</p>
