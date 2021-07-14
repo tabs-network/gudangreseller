@@ -7,7 +7,7 @@ ipsa minima, .')
 
 @section('content')
 <main>
-<img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block w-100" alt="Reseller dan Dropship " height="500" width="1900">
+<img src="{{url('assets/website/img/slider-1.svg')}}" class="img-fluid" alt="Reseller dan Dropship " height="500" width="2000">
 <section class="bg-dark text-light pt-5 pb-5">
     <div class="container">
         <div class="row">
