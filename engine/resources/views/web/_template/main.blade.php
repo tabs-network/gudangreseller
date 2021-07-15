@@ -26,6 +26,9 @@
     <meta name="theme-color" content="#4285f4">
 
     <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
 
     <style>

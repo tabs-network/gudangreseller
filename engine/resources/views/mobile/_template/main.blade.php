@@ -24,6 +24,9 @@
     <link rel="apple-touch-icon" href="{{url('favicon.svg')}}">
     <meta name="theme-color" content="#4285f4">
     <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/website/css/mobile.min.css')}}">
     <title>Gudang Reseller - @yield('title')</title>
 </head>
