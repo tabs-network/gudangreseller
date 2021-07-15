@@ -29,9 +29,9 @@
 </head>
 
 <body>
-    <div class="loader text-light">
+    {{-- <div class="loader text-light">
         <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." class="img-fluid" width="500" height="500"/>
-    </div>
+    </div> --}}
 
     @include('mobile._template.navHeader')
 
@@ -50,12 +50,12 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script>
+    {{-- <script>
         window.addEventListener("load", function () {
             const loader = document.querySelector(".loader");
             loader.className += " hidden"; // class "loader hidden"
         });
-    </script>
+    </script> --}}
     @yield('js')
 </body>
 </html>
