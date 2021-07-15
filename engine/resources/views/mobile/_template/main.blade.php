@@ -37,11 +37,11 @@
 
     @include('mobile._template.navFooter')
 
-    {{-- <main>
+    <main>
         @yield('content')
     </main>
     
-    @include('mobile._template.footer') --}}
+    @include('mobile._template.footer')
 
     <div style="height:65px;"></div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
