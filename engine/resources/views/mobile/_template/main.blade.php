@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" href="{{url('favicon.svg')}}">
     <meta name="theme-color" content="#4285f4">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{url('assets/website/css/mobile.min.css')}}">
     <title>Gudang Reseller - @yield('title')</title>
 </head>
 
