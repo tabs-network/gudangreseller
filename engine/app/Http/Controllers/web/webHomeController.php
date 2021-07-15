@@ -13,19 +13,19 @@ class webHomeController extends Controller
     {
         $product = Product::inRandomOrder()->take(8)->get();
         $agent = new Agent();
-        return view('web.home.index', ['product' => $product]);
-        // if($agent->isPhone())
-        // {
-        //     return view('mobile.home.index', ['product' => $product]);
-        // }
-        // if($agent->isTablet())
-        // {
-        //     return view('web.home.index', ['product' => $product]);
-        // }
-        // else 
-        // {
-        //     return view('web.home.index', ['product' => $product]);
-        // }
+
+        if($agent->isPhone())
+        {
+            return view('mobile.home.index', ['product' => $product]);
+        }
+        if($agent->isTablet())
+        {
+            return view('web.home.index', ['product' => $product]);
+        }
+        else 
+        {
+            return view('web.home.index', ['product' => $product]);
+        }
     }
 
     public function create()
