@@ -33,7 +33,7 @@
         <img src="{{url('assets/website/img/logo-section-1.svg')}}" alt="Loading..." class="img-fluid" width="500" height="500"/>
     </div>
 
-    @include('mobile._template.navHeader')
+    {{-- @include('mobile._template.navHeader')
 
     @include('mobile._template.navFooter')
 
@@ -41,7 +41,7 @@
         @yield('content')
     </main>
     
-    @include('mobile._template.footer')
+    @include('mobile._template.footer') --}}
 
     <div style="height:65px;"></div>
     <!-- Option 1: Bootstrap Bundle with Popper -->

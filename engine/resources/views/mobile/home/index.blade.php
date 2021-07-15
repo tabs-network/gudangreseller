@@ -10,7 +10,7 @@ ipsa minima, .')
 @section('content')
 <img src="{{url('assets/website/img/slider-1.svg')}}" class="d-block img-fluid" alt="Dropshipe dan Reseller Sepatu Sneakers murah" height="1900" width="500">
 
-{{-- <section class="section-dark bg-dark text-light py-3">
+<section class="section-dark bg-dark text-light py-3">
     <div class="container">
         <div class="text-center">
             <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="" width="50" height="50">
@@ -97,5 +97,5 @@ ipsa minima, .')
             @endforeach
         </div>
     </div>
-</section> --}}
+</section>
 @endsection
