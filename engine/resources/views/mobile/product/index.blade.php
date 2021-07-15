@@ -27,9 +27,9 @@ ipsa minima, .')
                 @foreach($product as $v)
                 <div class="d-flex col-6">
                     <div class="bg-light shadow-sm">
-                        <a href="{{route('web.product.show', $v->product_slug)}}" class="text-decoration-none">
+                        <a href="{{route('web.product.show', $v->product_slug)}}">
                             <img src="{{ url('engine/storage/app/product/150x150/'.$v->product_cover) }}"
-                                loading="lazy" title="asdadad" width="100%" height="auto"
+                                loading="lazy" title="asdadad" width="100%" height="300" width="300" class="img-fluid"
                                 alt="{{ $v->product_name }}">
                             <div class="p-2">
                                 <h3 style="font-size:12px"><span>{{$v->product_name}}</span></h3>
