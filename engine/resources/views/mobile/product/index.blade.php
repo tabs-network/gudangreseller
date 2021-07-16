@@ -20,7 +20,7 @@ ipsa minima, .')
         </div>
     </div>
 </div>
-{{-- 
+
 <div class="section-light py-2">
     <div class="container">
             <div class="row g-2">
@@ -29,7 +29,7 @@ ipsa minima, .')
                     <div class="bg-light shadow-sm">
                         <a href="{{route('web.product.show', $v->product_slug)}}">
                             <img src="{{ url('engine/storage/app/product/150x150/'.$v->product_cover) }}"
-                                loading="lazy" title="asdadad" height="300" width="300" class="img-fluid"
+                                loading="lazy" title="asdadad" height="150" width="150" class="img-fluid"
                                 alt="{{ $v->product_name }}">
                             <div class="p-2">
                                 <h3 style="font-size:12px"><span>{{$v->product_name}}</span></h3>
@@ -46,7 +46,7 @@ ipsa minima, .')
                 {{ $product->onEachSide(1)->links() }}
             </div>
     </div>
-</div> --}}
+</div>
 
 
 @endsection

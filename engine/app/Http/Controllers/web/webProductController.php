@@ -17,7 +17,7 @@ class webProductController extends Controller
         $agent = new Agent;
         if($agent->isMobile())
         {
-            $product = Product::paginate(6);
+            $product = Product::simplePaginate(6);
             return view('mobile.product.index', ['product' => $product, 'product_cat' => $product_cat]);
         }
         else 
