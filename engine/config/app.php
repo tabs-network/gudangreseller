@@ -233,6 +233,8 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+
     ],
 
 ];

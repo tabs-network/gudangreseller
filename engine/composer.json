@@ -10,6 +10,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3",
         "hardevine/shoppingcart": "^3.0",
+        "htmlmin/htmlmin": "^8.0",
         "intervention/image": "^2.5",
         "irazasyed/telegram-bot-sdk": "3.4.1",
         "jenssegers/agent": "^2.6",

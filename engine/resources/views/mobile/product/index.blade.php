@@ -21,7 +21,7 @@ ipsa minima, .')
     </div>
 </div>
 
-{{-- <div class="section-light py-2">
+<div class="section-light py-2">
     <div class="container">
             <div class="row g-2">
                 @foreach($product as $v)
@@ -46,5 +46,7 @@ ipsa minima, .')
                 {{ $product->onEachSide(1)->links() }}
             </div>
     </div>
-</div> --}}
+</div>
+
+
 @endsection
