@@ -12,16 +12,17 @@ class webProductController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(9);
         $product_cat = ProductCat::get();
 
         $agent = new Agent;
         if($agent->isMobile())
         {
+            $product = Product::paginate(6);
             return view('mobile.product.index', ['product' => $product, 'product_cat' => $product_cat]);
         }
         else 
         {
+            $product = Product::paginate(9);
             return view('web.product.index', ['product' => $product, 'product_cat' => $product_cat]);
         }
         
