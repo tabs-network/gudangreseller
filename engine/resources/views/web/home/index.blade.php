@@ -9,14 +9,6 @@
 <img src="{{url('assets/website/img/slider-1.svg')}}" class="img-fluid" alt="Reseller dan Dropship " height="500" width="2000">
 <section class="bg-dark text-light pt-5 pb-5">
     <div class="container">
-        <div class="h-card">
-            <a class="p-name u-url"
-             href="https://blog.lizardwrangler.com/"
-            >Mitchell Baker</a>
-            (<a class="p-org h-card"
-              href="https://mozilla.org/"
-             >Mozilla Foundation</a>)
-          </div>
         <div class="row">
             <div class="col-12 col-md-5 text-center">
                 <img src="{{url('assets/website/img/logo-section-1.svg')}}" class="img-fluid" alt="Wadah Reseller dan Drpshiper untuk menjual tas selempang, sepatu sneaker, jersey dan kaos" width="200" height="200">
