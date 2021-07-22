@@ -1,5 +1,5 @@
 <aside>
-    <div class="bg-light shadow-sm p-3 mb-3">
+    <div class="bg-light shadow-sm p-3 mb-4">
         <h4 class="fs-5 fw-normal m-0">Kategori</h4>
     </div>
     <div class="list-group shadow-sm">

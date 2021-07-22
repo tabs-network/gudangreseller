@@ -3,12 +3,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8">
-                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni delectus blanditiis autem commodi!
-                        Animi unde excepturi assumenda nihil eveniet quam nisi fugit tempora perferendis sapiente
-                        perspiciatis autem illum cupiditate doloribus quis laboriosam quas debitis a quidem possimus,
-                        veritatis asperiores praesentium? Blanditiis officia pariatur error hic consequuntur recusandae
-                        eos esse voluptatem.
+                    <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid mb-3" height="50" width="130">
+                    <p>
+                        Gudang Reeller adalah Dropship dan Reseller yang menjual product fashion seperti tas selempang, sepatu sneakers, Jersey bola, Jersey Esport dan kebutuhan fashion lainnya
+
                     </p>
                     <hr>
                     <div class="d-flex mt-3">

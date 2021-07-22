@@ -63,7 +63,7 @@
                             <tr class="table-success">
                                 <td colspan="4" class="text-right text-uppercase"><strong>Total:</strong></td>
                                 <td class="text-right">
-                                    <input align="right" type="text" class="form-control" value="{{\Cart::total()}}" id="total_all" style="text-align:right;" disabled>
+                                    <input align="right" type="text" class="form-control" value="{{rupiah(\Cart::total())}}" id="total_all" style="text-align:right;" disabled>
                                 </td>
                             </tr>
                         </tbody>
@@ -144,12 +144,16 @@
 @section('js')
 <script type="text/javascript">
 function total() {
+    // function numberWithCommas(x) {
+    //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    // }
+
     var ongkos_kirim = parseInt(document.getElementById('ongkos_kirim').value);
     var vtotal = {{\Cart::total()}};
 
     var jumlah_harga = ongkos_kirim + vtotal;
 
-    document.getElementById('total_all').value = jumlah_harga;
+    document.getElementById('total_all').value = new Intl.NumberFormat().format(jumlah_harga);
     }
 </script>
 @endsection

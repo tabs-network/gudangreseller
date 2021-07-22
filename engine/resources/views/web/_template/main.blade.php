@@ -28,14 +28,10 @@
     <!-- Bootstrap CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('assets/website/css/style.min.css')}}">
 
-    <style>
-        
-    </style>
-
-    <title>Gudang Reseller - @yield('title')</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>
@@ -60,6 +56,20 @@
             loader.className += " hidden"; // class "loader hidden"
         });
     </script> --}}
+    <script type='application/ld+json'> 
+        {
+            "@context": "http://www.schema.org",
+            "@type": "product",
+            "brand": "Kuzatura",
+            "name": "Gudang Reseller",
+            "description": "Dropshiper online",
+            "aggregateRating": {
+                    "@type": "aggregateRating",
+                    "ratingValue": "4",
+                    "reviewCount": "12113"
+            }
+        }
+    </script>
     @yield('js')
 </body>
 

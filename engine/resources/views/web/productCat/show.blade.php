@@ -23,18 +23,18 @@ tempora, ipsa minima, .')
 
 <section class="section-light container mt-4">
     <div class="row">
-        <div class="col-12 col-lg-3 mb-3">
+        <div class="col-12 col-lg-3 mb-3 mb-4">
             @include('web._template.category')
         </div>
         <div class="col-12 col-lg-9">
-            <h1 class="fs-3 fw-light">Produk Gudang Reseller</h1>
-            <h2 class="fs-5 fw-normal">Produk yang dijual di website kami</h2>
-            <div class="d-flex justify-content-end">
+            <h1 class="fs-3 fw-light">Produk {{ $productCatGet->product_cat_name }}</h1>
+            <h2 class="fs-5 text-muted fw-light">{{ $productCatGet->product_cat_name }} yang dijual di website Gudang Reseller</h2>
+            <div class="d-flex justify-content-end mb-1">
                 {{ $product->onEachSide(1)->links() }}
             </div>
-            <div class="row">
+            <div class="row g-3">
                 @foreach($product as $v)
-                <div class="d-flex col-6 col-md-6 col-lg-4 mb-3">
+                <div class="d-flex col-6 col-lg-4">
                     <div class="bg-light shadow-sm">
                         <a href="{{route('web.product.show', $v->product_slug)}}" class="txt-decoration-none">
                             <img src="{{ url('engine/storage/app/product/300x300/'.$v->product_cover) }}"
@@ -43,7 +43,6 @@ tempora, ipsa minima, .')
                             <div class="p-3">
                                 <h3 class="fs-6"><span>{{$v->product_name}}</span></h3>
                                 <p class="fs-6">SKU : {{$v->product_sku}}</p>
-                                <p class="fs-5">Rp.{{ number_format($v->product_price) }}</p>
                             </div>
                         </a>
                     </div>
@@ -51,7 +50,7 @@ tempora, ipsa minima, .')
                 @endforeach
             </div>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end mt-4">
             {{ $product->onEachSide(1)->links() }}
         </div>
     </div>

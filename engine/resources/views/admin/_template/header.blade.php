@@ -1,36 +1,25 @@
-<!-- Header Content -->
 <div class="content-header">
-    <!-- Left Section -->
     <div class="d-flex align-items-center">
-        <!-- Toggle Sidebar -->
-        <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
         <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none" data-toggle="layout" data-action="sidebar_toggle">
             <i class="fa fa-fw fa-bars"></i>
         </button>
-        <!-- END Toggle Sidebar -->
 
-        <!-- Toggle Mini Sidebar -->
-        <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
         <button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout" data-action="sidebar_mini_toggle">
             <i class="fa fa-fw fa-ellipsis-v"></i>
         </button>
         <a href="{{route('web.home.index')}}" target="_blank" type="button" class="btn btn-sm btn-dual mr-2">
             <i class="fa fa-fw fa-home"></i>
         </a>
-        <!-- END Toggle Mini Sidebar -->
     </div>
-    <!-- END Left Section -->
 
-    <!-- Right Section -->
     <div class="d-flex align-items-center">
-        <!-- Notifications Dropdown -->
         <div class="dropdown d-inline-block ml-2">
             <button type="button" class="btn btn-sm btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="si si-bell"></i>
-                <span class="badge badge-primary badge-pill">6</span>
+                <i class="fa fa-fw fa-bell"></i>
+                <span class="text-primary">•</span>
             </button>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-notifications-dropdown">
-                <div class="p-2 bg-primary text-center">
+                <div class="p-2 bg-primary-dark text-center rounded-top">
                     <h5 class="dropdown-header text-uppercase text-white">Notifications</h5>
                 </div>
                 <ul class="nav-items mb-0">
@@ -41,18 +30,18 @@
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">You have a new follower</div>
-                                <small class="text-muted">15 min ago</small>
+                                <span class="font-w500 text-muted">15 min ago</span>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a class="text-dark media py-2" href="javascript:void(0)">
                             <div class="mr-2 ml-3">
-                                <i class="fa fa-fw fa-plus-circle text-info"></i>
+                                <i class="fa fa-fw fa-plus-circle text-primary"></i>
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">1 new sale, keep it up</div>
-                                <small class="text-muted">22 min ago</small>
+                                <span class="font-w500 text-muted">22 min ago</span>
                             </div>
                         </a>
                     </li>
@@ -63,18 +52,18 @@
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">Update failed, restart server</div>
-                                <small class="text-muted">26 min ago</small>
+                                <span class="font-w500 text-muted">26 min ago</span>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a class="text-dark media py-2" href="javascript:void(0)">
                             <div class="mr-2 ml-3">
-                                <i class="fa fa-fw fa-plus-circle text-info"></i>
+                                <i class="fa fa-fw fa-plus-circle text-primary"></i>
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">2 new sales, keep it up</div>
-                                <small class="text-muted">33 min ago</small>
+                                <span class="font-w500 text-muted">33 min ago</span>
                             </div>
                         </a>
                     </li>
@@ -85,7 +74,7 @@
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">You have a new subscriber</div>
-                                <small class="text-muted">41 min ago</small>
+                                <span class="font-w500 text-muted">41 min ago</span>
                             </div>
                         </a>
                     </li>
@@ -96,7 +85,7 @@
                             </div>
                             <div class="media-body pr-2">
                                 <div class="font-w600">You have a new follower</div>
-                                <small class="text-muted">42 min ago</small>
+                                <span class="font-w500 text-muted">42 min ago</span>
                             </div>
                         </a>
                     </li>
@@ -108,35 +97,28 @@
                 </div>
             </div>
         </div>
-        <!-- END Notifications Dropdown -->
-        <!-- User Dropdown -->
+
         <div class="dropdown d-inline-block ml-2">
-            <button type="button" class="btn btn-sm btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded" src="{{url('assets/dashboard/media/avatars/avatar10.jpg')}}" alt="Header Avatar" style="width: 18px;">
-                <span class="d-none d-sm-inline-block ml-1">{{Auth::guard('admin')->user()->name}}</span>
-                <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
+            <button type="button" class="btn btn-sm btn-dual d-flex align-items-center" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="rounded-circle" src="{{ url('assets/dashboard/media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 21px;">
+                <span class="d-none d-sm-inline-block ml-2">{{Auth::guard('admin')->user()->name}}</span>
+                <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"></i>
             </button>
-            <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-user-dropdown">
-                <div class="p-3 text-center bg-primary">
-                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{url('assets/dashboard/media/avatars/avatar10.jpg')}}" alt="">
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0" aria-labelledby="page-header-user-dropdown">
+                <div class="p-3 text-center bg-primary-dark rounded-top">
+                    <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ url('assets/dashboard/media/avatars/avatar10.jpg') }}" alt="">
+                    <p class="mt-2 mb-0 text-white font-w500">{{Auth::guard('admin')->user()->name}}</p>
+                    <p class="mb-0 text-white-50 font-size-sm">Web Developer</p>
                 </div>
                 <div class="p-2">
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                        <span>Profile</span>
-                        <span>
-                            <i class="si si-user ml-1"></i>
-                        </span>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_profile.html">
+                        <span class="font-size-sm font-w500">Profile</span>
                     </a>
-                    <div role="separator" class="dropdown-divider"></div>
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{route('admin.logout')}}">
-                        <span>Log Out</span>
-                        <i class="si si-logout ml-1"></i>
+                        <span class="font-size-sm font-w500">Log Out</span>
                     </a>
                 </div>
             </div>
         </div>
-        <!-- END User Dropdown -->
     </div>
-    <!-- END Right Section -->
 </div>
-<!-- END Header Content -->

@@ -163,7 +163,8 @@ class admProductController extends Controller
     public function search(Request $request)
     {
         $count = Product::get()->count();
-        $product = Product::where('product_name', 'like', '%'.$request->key.'%')->orWhere('product_sku', 'like', '%'.$request->key.'%')->get();
-        return view('admin.product.search', ['product' => $product, 'key' => $request->key, 'count' => $count]);
+        $product = Product::where('product_name', 'like', '%'.$request->key.'%')->orWhere('product_sku', 'like', '%'.$request->key.'%')->paginate(10);
+        $product->appends(['key' => $request->key]);
+        return view('admin.product.index', ['product' => $product, 'count' => $count]);
     }
 }

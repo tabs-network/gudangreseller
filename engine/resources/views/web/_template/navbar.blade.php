@@ -7,10 +7,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-shadow" aria-current="page" href="{{route('web.home.index')}}">HOME</a>
+                        <a class="nav-link text-shadow {{ (request()->routeIs('web.home.*') ? 'active' : '') }}" aria-current="page" href="{{route('web.home.index')}}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-shadow" href="{{route('web.product.index')}}">PRODUK</a>
+                        <a class="nav-link text-shadow {{ (request()->routeIs(['web.product.*','web.productCat.*']) ? 'active' : '') }}" href="{{route('web.product.index')}}">PRODUK</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-shadow" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,8 +39,8 @@
                     <img src="{{url('assets/website/img/logo-navbar.svg')}}" alt="" class="img-fluid" height="50" width="130">
                 </div>
                 <div class="col">
-                    <form class="d-flex">
-                        <input class="form-control" type="search" placeholder="Cari Produk" aria-label="Search">
+                    <form action="{{ route('web.product.search') }}" method="GET" role="search" class="d-flex">
+                        <input class="form-control" name="key" type="search" placeholder="Cari Produk" aria-label="Search"  value="{{(request()->RouteIs('web.product.search'))  ? request()->key : ''}}">
                     </form>
                 </div>
             </div>

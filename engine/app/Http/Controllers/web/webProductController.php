@@ -28,16 +28,6 @@ class webProductController extends Controller
         
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show(Request $request, $slug)
     {
         $product = Product::where('product_slug', $slug)->first();
@@ -58,24 +48,10 @@ class webProductController extends Controller
         
     }
 
-    public function edit($id)
+    public function search(Request $request)
     {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $product_cat = ProductCat::get();
+        $product = Product::where('product_name', 'like', '%'.$request->key.'%')->orWhere('product_sku', 'like', '%'.$request->key.'%')->paginate(9);
+        return view('web.product.index', compact('product_cat', 'product'));
     }
 }
